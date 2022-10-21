@@ -1,23 +1,98 @@
 \documentclass[../notes.tex]{subfiles}
 \begin{document}
- 
+
+    En esta sección aprenderemos a
+
+    Un documento en \LaTeX{} se compone de dos principales segmentos: el preámbulo y el ambiente general del documento (denotado por \texttt{document}).\\
+    
+        $\left. \begin{minipage}{0.65\linewidth}
+            \begin{verbatim}
+\documentclass[]{article}
+
+\usepackage[margin=1.25in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+            \end{verbatim}
+        \end{minipage} \right\rbrace$ Preámbulo
+        
+        $\left. \begin{minipage}{0.65\linewidth}
+            \begin{verbatim}
+\begin{document}
+    Aquí va el texto.
+
+    \[ f(x) = \int_{0}^{x} t^{2} dt\]
+
+    \includegraphics[scale=0.5]{image.png}
+\end{document}
+            \end{verbatim}
+        \end{minipage} \right\rbrace$ Ambiente "\texttt{document}"
+
+    \section{Preámbulo}
+        \subsection{\texttt{documentclass}}
+        El preámbulo debe iniciar con el comando \texttt{documentclass}, que especifica la estructura general del documento. Este comando se estructura de la siguiente forma:
+        \[ \text{\texttt{\textbackslash documentclass}}\underbrace{\text{\texttt{[letterpage,12pt]}}}_{\text{opcional}}\underbrace{\text{\texttt{\{article\}}}}_{\text{tipo de documento}} \]
+
+        donde
+            \begin{enumerate}
+                \item \textbf{Tipo de documento}: 
+                    \begin{itemize}
+                        \item \texttt{article}: Estructura general para escribir articulos, ya sea publicaciones cientificas, documentación para programas y, en general, cualquier tipo de documento corto que no requiera una división compleja de partes y capítulos.
+                        \item \texttt{report}: Tipos de articulos largos, que contengan una cantidad mayor de capítulos, como libros pequeños y tesis.
+                        \item \texttt{book}: Usado para libros...
+                        \item \texttt{letter}: Para cartas.
+                        \item \texttt{beamer}: Utilizado para presentaciones en general. Requiere el paquete \texttt{beamer}.
+                    \end{itemize}
+                \item Opcional:
+                    \begin{itemize}
+                        \item Tamaño de papel:
+                        \item Tamaño de fuente:
+                    \end{itemize}
+            \end{enumerate}
+
+        \subsection{\texttt{usepackage}}
+        Luego, suelen agregarse distintos paquetes. Los siguientes
+            \begin{itemize}
+                \item \texttt{geometry}:
+                \item \texttt{amsmath}:
+                \item \texttt{amssymb}:
+                \item \texttt{graphicx}:
+            \end{itemize}
+    \section{Ambiente \texttt{document}}
+
+        En el ambiente \texttt{document} es donde se presenta el contenido actual que se desea mostrar.
+        
     \section{Tamaños de fuente}
 
         \subsection{En todo el texto}
         
-            test
+            Para establecer un tamaño de fuente en todo el documento, se establece. Puede ser \texttt{10pt}, \texttt{11pt} y \texttt{12pt}.
             
         \subsection{En una porción de texto}
         
-            test
-            
+            Comandos:
+                \begin{enumerate}
+                    \item \texttt{\textbackslash tiny}:
+                    \item \texttt{\textbackslash scriptsize}:
+                    \item \texttt{\textbackslash footnotesize}:
+                    \item \texttt{\textbackslash normalsize}:
+                    \item \texttt{\textbackslash large}:
+                    \item \texttt{\textbackslash Large}:
+                    \item \texttt{\textbackslash LARGE}:
+                    \item \texttt{\textbackslash huge}:
+                    \item \texttt{\textbackslash Huge}:
+                \end{enumerate}
+
+        Alcance
+    \section{Familia de fuentes}
+
+    
     \section{Estilos de fuente}
     
     \section{Correcto uso de brackets}
     
     \section{Enfasís}
     
-    \section{Familia de fuentes}
+    
     
     \section{Alineamiento de texto}
     
