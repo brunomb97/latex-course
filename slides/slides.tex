@@ -1,0 +1,25 @@
+\documentclass[10pt]{beamer}
+\usetheme{Luebeck}
+
+% Selecciona el encoding del fondo
+\usepackage[T1]{fontenc}
+
+% Aporta soporte multilinguistico
+\usepackage[spanish]{babel}
+\usepackage[margin=1.25in]{geometry}
+
+% Agregar metadatos al archivo
+\usepackage[pdfusetitle]{hyperref}
+
+% Permitir escribir en múltiples archivos
+\usepackage{subfiles}
+
+\begin{document}
+    
+\tableofcontents
+	
+\subsection{¿Qué es \LaTeX{}?}
+
+    \subfile{introduccion/main.tex}
+
+\end{document}
