@@ -1,0 +1,88 @@
+\documentclass[../slides.tex]{subfiles}
+
+\begin{document}
+    
+    \begin{frame}[fragile]
+
+    Un documento en \LaTeX{} se compone de dos principales segmentos: el preámbulo y el ambiente general del documento (denotado por \texttt{document}).\\
+    \vspace{1em}
+        $\left. \begin{minipage}{0.8\linewidth}
+            \begin{verbatim}
+\documentclass[]{article}
+
+\usepackage[margin=1.25in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+            \end{verbatim}
+        \end{minipage} \right\rbrace$ Preámbulo
+        
+        $\left. \begin{minipage}{0.8\linewidth}
+            \begin{verbatim}
+\begin{document}
+    Aquí va el texto.
+
+    \[ f(x) = \int_{0}^{x} t^{2} dt\]
+
+    \includegraphics[scale=0.5]{image.png}
+\end{document}
+            \end{verbatim}
+        \end{minipage} \right\rbrace$ Documento
+    \end{frame}
+
+    \begin{frame}
+        \tableofcontents[sections=\value{section}]
+    \end{frame}
+    \subsection{Preámbulo}
+
+    \begin{frame}{\texttt{documentClass}}
+        \subsection{\texttt{documentclass}}
+        El preámbulo debe iniciar con el comando \texttt{documentclass}, que especifica la estructura general del documento. Este comando se estructura de la siguiente forma:
+        \[ \text{\texttt{\textbackslash documentclass}}\underbrace{\text{\texttt{[letterpage,12pt]}}}_{\text{opcional}}\underbrace{\text{\texttt{\{article\}}}}_{\text{tipo de documento}} \]
+    \end{frame}
+
+    \begin{frame}{\texttt{documentClass}}
+        \[ \text{\texttt{\textbackslash documentclass}}\underbrace{\text{\texttt{[letterpage,12pt]}}}_{\text{opcional}}\underbrace{\text{\texttt{\{article\}}}}_{\text{tipo de documento}} \]
+            \begin{enumerate}
+                \item \textbf{Tipo de documento}: 
+                    \begin{itemize}
+                        \item \texttt{article}: Estructura general para escribir articulos, ya sea publicaciones cientificas, documentación para programas y, en general, cualquier tipo de documento corto que no requiera una división compleja de partes y capítulos.
+                        \item \texttt{report}: Tipos de articulos largos, que contengan una cantidad mayor de capítulos, como libros pequeños y tesis.
+                        \item \texttt{book}: Usado para libros...
+                        \item \texttt{letter}: Para cartas.
+                        
+                    \end{itemize}
+                \end{enumerate}
+    \end{frame}
+
+    \begin{frame}
+        \[ \text{\texttt{\textbackslash documentclass}}\underbrace{\text{\texttt{[letterpage,12pt]}}}_{\text{opcional}}\underbrace{\text{\texttt{\{article\}}}}_{\text{tipo de documento}} \]
+            \begin{enumerate}
+                \setcounter{enumi}{1}
+                \item Opcional:
+                    \begin{itemize}
+                        \item Tamaño de papel:
+                        \item Tamaño de fuente:
+                    \end{itemize}
+            \end{enumerate}
+        
+    \end{frame}
+    
+    \subsection{\texttt{usepackage}}
+    
+    \begin{frame}{\texttt{usepackage}}
+        
+        Luego, suelen agregarse distintos paquetes. Los siguientes
+            \begin{itemize}
+                \item \texttt{geometry}:
+                \item \texttt{amsmath}:
+                \item \texttt{amssymb}:
+                \item \texttt{graphicx}:
+            \end{itemize}
+    \end{frame}
+    
+    \subsection{Ambiente \texttt{document}}
+    
+    \begin{frame}{Ambiente \texttt{document}}
+        En el ambiente \texttt{document} es donde se presenta el contenido actual que se desea mostrar.
+    \end{frame}
+\end{document}

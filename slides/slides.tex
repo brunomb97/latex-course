@@ -1,12 +1,11 @@
 \documentclass[10pt]{beamer}
-\usetheme{Luebeck}
+\usetheme{Frankfurt}
 
 % Selecciona el encoding del fondo
 \usepackage[T1]{fontenc}
 
 % Aporta soporte multilinguistico
 \usepackage[spanish]{babel}
-\usepackage[margin=1.25in]{geometry}
 
 % Agregar metadatos al archivo
 \usepackage[pdfusetitle]{hyperref}
@@ -14,12 +13,41 @@
 % Permitir escribir en múltiples archivos
 \usepackage{subfiles}
 
+\title{Curso de \LaTeX{}}
+\author{Bruno Martinez Barrera}
+\date{25 de octubre de 2022}
+
 \begin{document}
+    \begin{frame}
+        \maketitle
+    \end{frame}
     
-\tableofcontents
+    \begin{frame}{Tabla de Contenidos}
+        \tableofcontents[hideallsubsections]
+    \end{frame}
 	
-\subsection{¿Qué es \LaTeX{}?}
+\section{Introducción}
 
     \subfile{introduccion/main.tex}
+
+\section{Estructura}
+
+    \subfile{estructura/main.tex}
+    
+\section{Manipulación de texto}
+
+    \subfile{textmode/main.tex}
+
+\section{Manipulación en modo matemática}
+
+    \subfile{mathmode/main.tex}
+    
+\section{Tablas y arreglos}
+
+    \subfile{tablas/main.tex}
+    
+\section{Beamers}
+
+    \subfile{beamer/main.tex}
 
 \end{document}
