@@ -13,6 +13,10 @@
 \usepackage[margin=1.25in]{geometry}
 \usepackage{amsmath, amssymb}
 \usepackage{graphicx}
+
+\title{Curso de \LaTeX{}}
+\author{Bruno Martinez Barrera}
+\date{25 de octubre de 2022}
             \end{verbatim}
         \end{minipage} \right\rbrace$ Preámbulo
         
@@ -21,7 +25,7 @@
 \begin{document}
     Aquí va el texto.
 
-    \[ f(x) = \int_{0}^{x} t^{2} dt\]
+    \[ f(x) = \int_{0}^{x} t^{2} dt\] %Integral
 
     \includegraphics[scale=0.5]{image.png}
 \end{document}
@@ -79,10 +83,33 @@
                 \item \texttt{graphicx}:
             \end{itemize}
     \end{frame}
-    
+
+    \subsection{Título, autor y fecha}
+    \begin{frame}
+        \begin{enumerate}
+            \item \texttt{\textbackslash title}: El título del documento.
+            \item \texttt{\textbackslash author}: Para indicar el nombre de los autores.
+            \item \texttt{\textbackslash date}: puedes ingresar la fecha manualmente, o bien utilizar el comando \texttt{\textbackslash today} para indicar la fecha actual de la última vez que se compiló el archivo.
+        \end{enumerate}
+    \end{frame}
     \subsection{Ambiente \texttt{document}}
     
     \begin{frame}{Ambiente \texttt{document}}
         En el ambiente \texttt{document} es donde se presenta el contenido actual que se desea mostrar.
+    \end{frame}
+
+    \subsection{Comentarios}
+
+    \begin{frame}{Comentarios}
+        De alguna forma, en \LaTeX{} se programa código. Por tanto, puede ser útil \emph{incluir comentarios} dentro de los documentos.
+        
+        Ejemplos para utilizar comentarios:
+        
+            \begin{itemize}
+                \item Para indicar notas de "tareas pendientes".
+                \item Comentarios que expliquen el tema.
+            \end{itemize}
+            
+        Esto se hace de forma de escribir \texttt{\%} y el comentario deseado.
     \end{frame}
 \end{document}
