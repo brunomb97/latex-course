@@ -1,13 +1,38 @@
 \documentclass[../slides.tex]{subfiles}
 
 \begin{document}
-
+    
     \begin{frame}
         \tableofcontents[sections=\value{section}]
     \end{frame}
 
-    \subsection{Ambiente \texttt{tabular}}
-    \begin{frame}{Ambiente \texttt{tabular}}
+    \subsection{Importar imagenes}
+    \begin{frame}[fragile]{Importar imagenes}
+        \begin{block}{Nota}
+            Requiere el paquete \texttt{graphicx}
+        \end{block}
+
+        Para incluir una fotografía, utilice el comando 
+        \begin{verbatim}
+\includegraphics[optional]{nombre_archivo}
+        \end{verbatim}
+% \textbackslash includegraphics \{ nombre_archivo \}
+        \textbf{Comandos opcionales}:
+            \begin{enumerate}
+                \item \texttt{scale}: Escala la imagen. Valores menores a 1 reducen la imagen manteniendo la resolución y valores mayores a 1 aumentan el tamaño de la imagen manteniendo la resolución.
+        \begin{verbatim}
+\includegraphics[scale=0.75]{nombre_archivo}
+        \end{verbatim}
+                \item \texttt{width}:
+                \item \texttt{height}:
+                \item \texttt{rotate}:
+                \item \texttt{trim}:
+            \end{enumerate}
+        
+    \end{frame}
+
+    \subsection{Tablas}
+    \begin{frame}{Tablas}
         
     \end{frame}
 
@@ -15,6 +40,11 @@
     
     \begin{frame}{Bordes}
 
+    \end{frame}
+    
+    \subsection{Ambientes flotantes}
+    \begin{frame}{Ambientes flotantes}
+        
     \end{frame}
 
     \subsection{Tamaño de columnas fijo}

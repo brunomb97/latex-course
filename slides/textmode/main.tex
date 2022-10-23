@@ -27,13 +27,16 @@
                 
         \end{enumerate}
     \end{frame}
-    \subsection{Familia de fuentes}
-    \begin{frame}{Familia de fuentes}
         
-    \end{frame}
     \subsection{Estilos de fuente}
     \begin{frame}{Estilos de fuente}
-        
+        En particular, tenemos tres herramientas usuales para dar estilo al texto presentado.
+            \begin{enumerate}
+                \item Negrita: \texttt{\textbackslash textbf} Este es un texto en \textbf{negrita}.
+                    
+                \item Cursiva: \texttt{\textbackslash textit}
+                \item Subrayado: \texttt{\textbackslash underline}
+            \end{enumerate}
     \end{frame}
 
     \subsection{Correcto uso de brackets}
@@ -41,34 +44,96 @@
     
     \end{frame}
     
-    \subsection{Enumeración y listados}
-    \begin{frame}{Enumeración y listados}
-        
+    \subsection{Listas}
+    \begin{frame}[fragile]{Listas}
+        \begin{enumerate}
+            \item Lista enumerada:
+                \begin{verbatim}
+\begin{enumerate}
+    \item Este es el primer item.
+    \item Este es el segundo item.
+\end{enumerate}
+                \end{verbatim}
+            \item Lista no enumerada:
+                \begin{verbatim}
+\begin{itemize}
+    \item Este es el primer item.
+    \item Este es el segundo item.
+\end{itemize}
+                \end{verbatim}
+        \end{enumerate}
     \end{frame}
     
     \subsection{Alineamiento de texto}
-    \begin{frame}{Alineamiento de texto}
-        
+    \begin{frame}[fragile]{Alineamiento de texto}
+        \begin{columns}
+            \column{0.5\linewidth}
+                \begin{verbatim}
+Este texto no está centrado.
+                \end{verbatim}
+Este texto no está alineado.
+            \column{0.5\linewidth}
+                Texto centrado
+                    \begin{verbatim}
+\begin{center}
+Este texto está centrado.
+\end{center}
+                    \end{verbatim}
+\begin{center}
+Este texto está centrado.
+\end{center}
+        \end{columns}
     \end{frame}
 
-    \subsection{Importar imagenes}
-    \begin{frame}{Importar imagenes}
-        
+        \begin{frame}[fragile]{Alineamiento de texto}
+        \begin{columns}
+            \column{0.5\linewidth}
+                Texto a la izquierda
+                    \begin{verbatim}
+\begin{flushleft}
+Este texto está alineado a
+la izquierda.
+\end{flushleft}
+                    \end{verbatim}
+\begin{flushleft}
+Este texto está alineado a la izquierda.
+\end{flushleft}
+            \column{0.5\linewidth}
+                Texto a la derecha
+                    \begin{verbatim}
+\begin{flushright}
+Este texto está alineado
+a la derecha.
+\end{flushright}
+                    \end{verbatim}
+\begin{flushright}
+Este texto está alineado a la derecha.
+\end{flushright}
+        \end{columns}
     \end{frame}
-    
+
     \subsection{Saltos de linea}
-    \begin{frame}{Saltos de linea}
-        
+
+    \begin{frame}[fragile]{Saltos de linea}
+        Los saltos de linea se pueden realizar como
+            \begin{verbatim}
+Esta es la primera linea.\\
+Esta es la segunda linea.\\[\baselineskip]
+Esta es la tercera linea.\\[2\baselineskip]
+            \end{verbatim}
+Esta es la primera linea.\\
+Esta es la segunda linea.\\[\baselineskip]
+Esta es la tercera linea.\\[2\baselineskip]
     \end{frame}
-    
-    \subsection{Indentación}
-    \begin{frame}{Indentación}
-        
-    \end{frame}
-    
+
     \subsection{Forzar nueva página}
     \begin{frame}{Forzar nueva página}
-    
+        Dos comandos:
+            \begin{enumerate}
+                \item \texttt{\textbackslash newpage}
+                \item \texttt{\textbackslash clearpage}
+            \end{enumerate}
+        Ambos comandos se utilizan para saltar una nueva página. Poseen unas diferencias, las cuales se verán más adelante.
     \end{frame}
     
     \subsection{Otras utilidades para estudiar}
