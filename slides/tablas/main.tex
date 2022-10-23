@@ -19,12 +19,19 @@
 % \textbackslash includegraphics \{ nombre_archivo \}
         \textbf{Comandos opcionales}:
             \begin{enumerate}
-                \item \texttt{scale}: Escala la imagen. Valores menores a 1 reducen la imagen manteniendo la resolución y valores mayores a 1 aumentan el tamaño de la imagen manteniendo la resolución.
+                \item \texttt{scale}: Escala la imagen. Valores menores a 1 reducen el tamaño de la imagen manteniendo su relación de aspecto; valores mayores a 1 aumentan el tamaño.
         \begin{verbatim}
 \includegraphics[scale=0.75]{nombre_archivo}
         \end{verbatim}
-                \item \texttt{width}:
-                \item \texttt{height}:
+                \item \texttt{width}: Establece un valor fijo para el ancho de la imagen.
+                \item \texttt{height}: Establece un valor fijo para la altura de la imagen.
+            \end{enumerate}
+        Si se indica solo un parámetro, entonces se mantendrá la relación de aspecto. Si se identifican dos parámetros, entonces hará ambos.
+    \end{frame}
+    
+    \begin{frame}
+            \begin{enumerate}
+                \setcounter{enumi}{3}
                 \item \texttt{rotate}:
                 \item \texttt{trim}:
             \end{enumerate}
@@ -32,42 +39,112 @@
     \end{frame}
 
     \subsection{Tablas}
-    \begin{frame}{Tablas}
+
+    \begin{frame}[fragile]{Tablas}
+        Estructura general de una tabla, usando el comando \texttt{tabular}.
         
+            \begin{verbatim}
+\begin{tabular}{ c c c }
+    Celda 1 & Celda 2 & Celda 3 \\ 
+    Celda 4 & Celda 5 & Celda 6 \\  
+    Celda 7 & Celda 8 & Celda 9    
+\end{tabular}
+            \end{verbatim}
+            
+\begin{tabular}{ c c c }
+    Celda 1 & Celda 2 & Celda 3 \\ 
+    Celda 4 & Celda 5 & Celda 6 \\  
+    Celda 7 & Celda 8 & Celda 9    
+\end{tabular}\\[\baselineskip]
+
+        \only<1>{El primer parámetro del ambiente (en el ejemplo, \texttt{\{ c c c \}}) indica cuántas columnas tendrá la tabla. El valor \texttt{c} (center) indica que los textos de la columna se alinearán en el centro.\\[\baselineskip]
+
+        Se utilizará \texttt{l} (left) si se desea alinear a la izquierda,y \texttt{r} (right) si se desea alinear a la derecha.}
+
+        \only<2>{ Luego, se establece la estructura de la tabla.
+            \begin{itemize}
+                \item Para separar filas, se requiere utilizar \texttt{\textbackslash \textbackslash} (interpretándolo como salto de linea).
+                \item Para separar celdas en una misma fila, se utiliza \texttt{\&} (interpretándolo como salto de una columna a otra).
+            \end{itemize}
+        }
     \end{frame}
 
     \subsection{Bordes}
     
-    \begin{frame}{Bordes}
+    \begin{frame}[fragile]{Bordes}
+        \textbf{Lineas vérticales:}         
+            \begin{verbatim}
+\begin{tabular}{|c|c c|}
+    Celda 1 & Celda 2 & Celda 3 \\ 
+    Celda 4 & Celda 5 & Celda 6 \\  
+    Celda 7 & Celda 8 & Celda 9    
+\end{tabular}
+            \end{verbatim}
+            
+\begin{tabular}{|c|c c|}
+    Celda 1 & Celda 2 & Celda 3 \\ 
+    Celda 4 & Celda 5 & Celda 6 \\  
+    Celda 7 & Celda 8 & Celda 9    
+\end{tabular}\\[\baselineskip]
+    \end{frame}
 
+    \begin{frame}[fragile]{Bordes}
+        \textbf{Lineas horizontales:}         
+            \begin{verbatim}
+\begin{tabular}{|c|c c|}
+    \hline
+    Celda 1 & Celda 2 & Celda 3 \\
+    \hline
+    Celda 4 & Celda 5 & Celda 6 \\  
+    Celda 7 & Celda 8 & Celda 9 \\
+    \hline
+\end{tabular}
+            \end{verbatim}
+            
+\begin{tabular}{|c|c c|}
+    \hline
+    Celda 1 & Celda 2 & Celda 3 \\
+    \hline
+    Celda 4 & Celda 5 & Celda 6 \\  
+    Celda 7 & Celda 8 & Celda 9 \\
+    \hline
+\end{tabular}
+    \begin{block}{Nota}
+        En caso de necesitar agregar una linea al final de la tabla, entonces necesariamente se debe agregar un salto de linea al final de esta, o si no, ocurrirá un error de compilación.
+    \end{block}
+    \end{frame}
+
+    \begin{frame}{Herramientas útiles}
+        Existen distintas herramientas disponibles para construir tablas en \LaTeX{} de forma sencilla y amigable.
+
+            \begin{itemize}
+                \item \textbf{LaTeX Tables Editor}: \href{https://www.latex-tables.com/}{latex-tables.com}
+                \item \textbf{Tables Generator}: \href{https://www.tablesgenerator.com/latex_tables}{tablesgenerator.com}
+                \item Muchas más disponibles en internet, que puedan ser encontradas a través de un buscador.
+            \end{itemize}
+
+        Estas permitirán, también, realizar acciones como:
+            \begin{itemize}
+                \item Importar tablas desde un Excel.
+                \item Fijar ancho y alto de una columna.
+                \item Combinar celdas.
+            \end{itemize}
     \end{frame}
     
-    \subsection{Ambientes flotantes}
-    \begin{frame}{Ambientes flotantes}
-        
-    \end{frame}
-
-    \subsection{Tamaño de columnas fijo}
-    
-    \begin{frame}{Tamaño de columnas fijo}
-
-    \end{frame}
-        
-    \subsection{Multicolumnas}
-
-    \begin{frame}{Multicolumnas}
-
-    \end{frame}
-
-    \begin{frame}{Ambiente \texttt{array}bmb.x's profile picture}
-
-    \end{frame}
+%    \subsection{Ambientes flotantes}
+%    \begin{frame}{Ambientes flotantes}
+%        \emph{Ambientes flotantes} son ``contenedores'' para objetos que no puedan o deban \emph{ser cortados por una página}.\\[\baselineskip]
+%
+%        Estos ambientes lidian con el problema de objetos que no encajan en la página actual.\\[\baselineskip]
+%
+%        No forman parte del texto y su entorno en el ambiente \texttt{document}, sino que se posicionan de forma separada (ya sea arriba, al medio, abajo, a la derecha o izquierda, o cualquier posición que el autor especifique).\\[\baselineskip]
+%
+%        Por ejemplo, si no hay suficiente espacio en la página actual, entonces el ambiente flotante aparecerá al inicio de la página siguiente, llenando el espacio que pueda quedar disponible en la página con el texto que continua al ambiente.\\[\baselineskip]
+%        
+%        Estos objetos poseen un subtitulo que permita identificarlos y/o describirlos.
+%    \end{frame}
 
     \begin{frame}{Matrices}
-
-    \end{frame}
-
-    \begin{frame}{Herramientas disponibles en internet}
 
     \end{frame}
 \end{document}
