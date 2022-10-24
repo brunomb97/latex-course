@@ -63,7 +63,7 @@ De esta forma,
 
     \end{frame}
 
-    \begin{frame}
+    \begin{frame}{Notación básica}
         \begin{block}{Nota}
             \begin{itemize}
                 \item Es buena práctica utilizar fracciones en vez de divisiones.
@@ -84,20 +84,65 @@ De esta forma,
           \end{tabular}
         \end{center}
     \end{frame}
+
     \subsection{Superlineado y sublineado}
 
-    \begin{frame}{Superlineado y sublineado}
+    \begin{frame}[fragile]{Superlineado y sublineado}
         \begin{columns}[t]
             \column{0.5\linewidth}
                 \textbf{Superlineado}: 
 
                 Se utiliza \texttt{\^} para escribir en superlineado. Por ejemplo, exponentes.
+
+                \begin{verbatim}
+Se tiene entonces que 
+$e^{i\pi} = -1$.
+                \end{verbatim}
+Se tiene entonces que $e^{i\pi} = -1$.
             \column{0.5\linewidth}
                 \textbf{Sublineado}: 
 
                 Se utiliza \texttt{\_} para escribir en sublineado. Por ejemplo, índices.
+
+                \begin{verbatim}
+Por tanto, existe una
+subsucesión $x_{k_{j}}$.
+                \end{verbatim}
+Por tanto, existe una subsucesión $x_{k_{j}}$.
         \end{columns}
     \end{frame}
+    
+    \begin{frame}{Notación para cálculo}
+        \begin{enumerate}
+            \item Limite
+            
+            \begin{center}
+                \begin{tabular}{|c|c|}
+                    \hline
+                        & \\
+                        \begin{tabular}{@{}c@{}} \texttt{\textbackslash lim\_\{x\textbackslash{}to\textbackslash{}infty\}  \textbackslash frac\{x\^{}2\}\{2x\^{}2+1\}}\\\texttt{ = \textbackslash frac 1 2} \end{tabular} 
+                        & $\displaystyle \quad\lim_{x \to \infty} \frac{x^2}{2x^2+1} = \frac 1 2\quad$ \\
+                        & \\
+                    \hline
+                \end{tabular}
+            \end{center}
+
+            \item Sumatoria
+            
+            \begin{center}
+                \begin{tabular}{|c|c|}
+                    \hline
+                        & \\
+                        
+                        \texttt {\textbackslash sum\_\{i = 1\}\^{}n x = \textbackslash frac\{x(x+1)\}\{2}\} & $\displaystyle \quad\sum_{i = 1}^n x = \dfrac{x(x+1)}{2} \quad$ \\
+                        & \\
+                    \hline
+                \end{tabular}
+            \end{center}
+        \end{enumerate}
+    \end{frame}
+    
+
     
     \subsection{Paréntesis}
 
