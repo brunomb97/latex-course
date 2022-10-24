@@ -8,7 +8,70 @@
 
     \subsection{¿Qué es \LaTeX{}?}
         
-    \begin{frame}{¿Qué es \LaTeX{}?}
-        Test
+    \begin{frame}[fragile]{¿Qué es \LaTeX{}?}
+        \LaTeX{} es un sistema de composición de textos, orientado a la creación de documentos escritos de alta calidad. Incluye herramientas diseñadas para la producción de documentación técnica y cientifica.
+
+        \LaTeX{} es un software libre, por lo que no hay que pagar por utilizar LaTeX.
+
+        \begin{block}{Idea}
+            \LaTeX{} fomenta a los autores no preocuparse mucho sobre las apariencias de sus documentos si no más bien de concentrarse en entregar el contenido.
+        \end{block}
+
+    \end{frame}
+
+    \begin{frame}[fragile]{Ejemplo}
+        Ejemplo: Considere el siguiente documento
+            \begin{verbatim}
+Curso de LaTeX
+Bruno Martinez Barrera
+Octubre 2022
+
+Hola tarolas!                
+            \end{verbatim}
+        Generalmente, uno debería encargarse de estilizar el texto: seleccionar el tamaño de fuente entre distintas medidas, la familia de la fuente (Arial, Times New Roman), lo que puede significar una pérdida de tiempo para lo que realmente es necesario: el contenido.
+
+        \LaTeX{} pretende dejar el diseño del documento a diseñadores, y dejar al autor continuar con la escritura del documento.
+    \end{frame}
+
+    \begin{frame}[fragile]{Ejemplo}
+        Por tanto, la idea del LaTeX es
+            \begin{verbatim}
+\documentclass{article}
+\title{Curso de LaTeX}
+\author{Bruno Martinez Barrera}
+\date{Octubre 2022}
+\begin{document}
+   \maketitle
+   Hola tarolas!
+\end{document}        
+            \end{verbatim}
+
+    Esto quiere decir, el documento es un artículo, cuyo titulo es ''Curso de Latex'', cuyo autor es Bruno Martinez y la fecha del documento data de Octubre de 2022, y que el documento contiene un titulo y las palabras "Hola tarolas!".
+    \end{frame}
+
+    \subsection{Editores de \LaTeX{}}
+
+    \begin{frame}{Editores de \LaTeX{}}
+        \begin{enumerate}
+            \item \textbf{Overleaf}: Editor online de LaTeX que permite crear archivos directamente desde el navegador. \href{overleaf.com}{overleaf.com}
+            \item \textbf{TeXLive}.
+            \item \textbf{TeXWorks}.
+            \item \textbf{MacTeX}.
+            \item \textbf{Kile}.
+        \end{enumerate}
+
+        \begin{block}{Nota}
+            En este curso, en particular, se trabajará con Overleaf, por la sencillez de la instalación (ninguna).
+        \end{block}
+    \end{frame}
+
+    \subsection{La comunidad de \LaTeX{}}
+
+    \begin{frame}{La comunidad de \LaTeX{}}
+        Existe una importante comunidad de \LaTeX{} presente en internet. Una de las más importantes es
+            \begin{center}
+                \href{https://tex.stackexchange.com/}{https://tex.stackexchange.com/}
+            \end{center}
+        Más allá de este curso, existen documentaciones recomendadas y más completas, por ejemplo la documentación de Overleaf.
     \end{frame}
 \end{document}
