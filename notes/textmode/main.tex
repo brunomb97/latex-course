@@ -30,8 +30,27 @@
     \section{Preámbulo}
         \subsection{\texttt{documentclass}}
         El preámbulo debe iniciar con el comando \texttt{documentclass}, que especifica la estructura general del documento. Este comando se estructura de la siguiente forma:
-        \[ \text{\texttt{\textbackslash documentclass}}\underbrace{\text{\texttt{[letterpage,12pt]}}}_{\text{opcional}}\underbrace{\text{\texttt{\{article\}}}}_{\text{tipo de documento}} \]
-
+        
+        \begin{align*} \text{
+            \texttt{
+                \textbackslash documentclass
+                }
+            }
+        \underbrace{
+            \text{
+                \texttt{
+                    [letterpage,12pt]
+                    }
+                }
+        }_{\text{opcional}}
+        \underbrace{
+            \text{
+                \texttt{
+                    \{article\}
+                    }
+                }
+        }_{\text{tipo de documento}} \end{align*}
+        
         donde
             \begin{enumerate}
                 \item \textbf{Tipo de documento}: 
