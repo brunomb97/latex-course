@@ -1,10 +1,44 @@
 \documentclass[../notes.tex]{subfiles}
 \begin{document}
-    \section{Modo matemática y algunos detalles}
-    
+    \section{Modo matemática}
+        Una de las mayores ventajas de {\LaTeX} es su capacidad de escribir fórmulas matemáticas complejas. Como ya se ha dicho anteriormente, {\LaTeX} separa la composición de textos en modo texto y modo matemática.
+        
+        En primer lugar, se puede presentar en una linea de texto, o bien desplegarse como una ecuación. Para el primer caso, se tiene
+            
+            \begin{Verbatim}[frame=single,fontsize=\small,label=Input]
+La siguiente línea de $\int_2^3 x^2 \, dx = \frac{3^3}{3} - \frac{2^3}{3} 
+= \frac{19}{3}.$
+            \end{Verbatim}
+            \fbox{
+            \begin{minipage}{0.9665\linewidth}
+            	La siguiente línea de $\int_2^3 x^2 \, dx = \frac{3^3}{3} - \frac{2^3}{3} = \frac{19}{3}.$
+            \end{minipage}
+            }
+            
+        Mientras que, en una versión extendida:
+        
+            \begin{Verbatim}[frame=single,fontsize=\small,label=Input]
+La siguiente línea de
+    \[\int_2^3 x^2 \, dx = \frac{3^3}{3} - \frac{2^3}{3} = \frac{19}{3} \]
+            \end{Verbatim}
+            \fbox{
+            \begin{minipage}{0.9665\linewidth}
+            	La siguiente línea de
+                    \[\int_2^3 x^2 \, dx = \frac{3^3}{3} - \frac{2^3}{3} = \frac{19}{3} \]
+            \end{minipage}
+            }
+        
+        
     \section{Notación básica}
         \subsection{Aritmetica}
-        
+            \begin{Verbatim}[frame=single,fontsize=\small,label=Input]
+\[ 1 + 2 - 3 = 0,\quad 3 \cdot 4 = 12,\quad 3 \times 4 = 12\]
+            \end{Verbatim}
+            \fbox{
+            \begin{minipage}{0.9665\linewidth}
+            	\[ 1 + 2 - 3 = 0,\quad 3 \cdot 4 = 12,\quad 3 \times 4 = 12\]
+            \end{minipage}
+            }
         \subsection{Fracciones}
         
     \section{Superlineado y sublineado}
