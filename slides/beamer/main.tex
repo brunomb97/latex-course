@@ -1,34 +1,61 @@
 \documentclass[../slides.tex]{subfiles}
 
 \begin{document}
-
-    \tableofcontents[sections=\value{section}]
-
-    \subsection{¿Qué es \LaTeX{}?}
+    \begin{frame}
+        \tableofcontents[sections=\value{section}]
+    \end{frame}
         
-    \begin{frame}{¿Qué es \LaTeX{}?}
+    \begin{frame}[fragile]{Beamers}
+        Beamer es una clase de documento para realizar presentaciones.
 
+            \begin{verbatim}
+\documentclass{beamer}
+            \end{verbatim}
+
+        La estructura básica de un beamer corresponderán a slides, de forma que denotaremos \texttt{frame} a cada diapositiva de la presentación.
         
+        \begin{verbatim}
+\ begin{frame}{Titulo de la diapositiva}
+    Aqui va el texto de la diapositiva.
+\ end{frame}
+        \end{verbatim}
+
+        En general, siguen las mismas reglas vistas anteriormente. Beamer entrega más herramientas para utilizar.
     \end{frame}
 
-    \subsection{Editores de \LaTeX{}}
+    \subsection{Múltiples columnas en diapositivas}
 
-    \begin{frame}{Editores de \LaTeX{}}
+    \begin{frame}[fragile]{Múltiples columnas}
+        Se puede utilizar múltiples columnas con el ambiente \texttt{columns}
+        \begin{verbatim}
+\begin{columns}
+    \column{0.4 \linewidth}
+        Este es el texto de la columna 1.
+            
+        Puede contener varios párrafos.
+    \column{0.6 \linewidth}
+        Este es el texto de la columna 2.
+            
+        Esta es una columna más ancha que la otra.
+\end{columns}
+        \end{verbatim}
+    Output:
+    
+        \begin{columns}
+            \column{0.4 \linewidth}
+                Este es el texto de la columna 1.
 
-        
-    \end{frame}
+                Puede contener varios párrafos.
+            \column{0.6 \linewidth}
+                Este es el texto de la columna 2.
 
-    \subsection{La comunidad de \LaTeX{}}
+                Esta es una columna más ancha que la otra.
+        \end{columns}
+     \end{frame}
 
-    \begin{frame}{La comunidad de \LaTeX{}}
-
-        
-    \end{frame}
-
-    \subsection{Consejos generales}
-
-    \begin{frame}{Consejos generales}
-
-        
-    \end{frame}
+     \begin{frame}{Múltiples columnas}
+        \begin{block}{Nota}
+            Tiene sentido establecer el largo de la columna de forma que dependa del largo de la linea. En este caso, se estableció que la primera columna posea el 40\% del largo de la linea y la segunda columna el 60\%.
+        \end{block}
+     \end{frame}
 \end{document}
