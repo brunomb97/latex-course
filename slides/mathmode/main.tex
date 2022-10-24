@@ -6,20 +6,97 @@
         \tableofcontents[sections=\value{section}]
     \end{frame}
 
-    \subsection{Modo matemática y algunos detalles}
+    \subsection{Modo matemática}
 
-    \begin{frame}{Modo matemática y algunos detalles}
+    \begin{frame}[fragile]{Modo matemática}
+        \begin{columns}[t]
+            \column{0.5\linewidth}
+                \textbf{In-line}: se utiliza para escribir fórmulas dentro del párrafo. Se utiliza \texttt{\$math\$}.
+            \column{0.5\linewidth}
+                \textbf{Display}: se utiliza para escribir fórmulas fuera del párrafo, y por tanto, en una linea separada. Se puede utilizar tanto \texttt{\$\$math\$\$} como \texttt{\textbackslash[math\textbackslash]}.
+        \end{columns}
+        \begin{verbatim}
+Como $f(x) = x^3$, entonces
+    $$ \int f(x) dx = \frac{x^4}{4} $$.
+De esta forma,
+    \[ \int_{0}^{1} f(x) dx = 
+    \frac{1^4}{4} - \frac{0^4}{4} = \frac{1}{4} \]
+        \end{verbatim}
+Como $f(x) = x^3$, entonces
+    $$ \int f(x) dx = \frac{x^4}{4} $$.
+De esta forma,
+    \[ \int_{0}^{1} f(x) dx = 
+    \frac{1^4}{4} - \frac{0^4}{4} = \frac{1}{4} \]
     \end{frame}
-    
+
     \subsection{Notación básica}
-        \begin{itemize}
+    
+    \begin{frame}{Notación básica}
+        \begin{enumerate}
             \item Aritmética
+                \begin{center}
+                \begin{tabular}{|c|c|c|}
+                \hline
+                    Suma & \texttt{1 + 2 = 3} & $\quad\quad1 + 2 = 3\quad\quad$\\
+                \hline
+                    Resta & \texttt{8 - 1 = 7} & $8 - 1 = 7$\\
+                \hline
+                    Multiplicación & \texttt{3 \textbackslash cdot 4 = 12} & $3 \cdot 4 = 12$\\
+                \hline
+                    Multiplicación & \texttt{3 \textbackslash times 4 = 12} & $3 \times 4 = 12$\\
+                \hline
+                    División & \texttt{25 \textbackslash div 5 = 5} & $25 \div 5 = 5$\\
+                \hline
+                \end{tabular}
+                \end{center}
             \item Fracciones
-        \end{itemize}{Aritmetica}
-        
+                \begin{center}
+                \begin{tabular}{|c|c|c|}
+                \hline
+                    & & \\
+                    Fracción & \texttt \textbackslash frac\{12\}\{48\} & $\quad\quad\dfrac{1}{4}\quad\quad$ \\
+                    & & \\
+                \hline
+                \end{tabular}
+                \end{center}
+        \end{enumerate}
+
+    \end{frame}
+
+    \begin{frame}
+        \begin{block}{Nota}
+            \begin{itemize}
+                \item Es buena práctica utilizar fracciones en vez de divisiones.
+                \item Utilizar \texttt{frac} en modo in-line entregará una versión más compacta de esta. En caso de necesitar la versión ampliada, se puede utilizar \texttt{dfrac}. En el caso de estar en modo display, no habrá diferencia.
+            \end{itemize}
+        \end{block}
+        \begin{center}
+           \begin{tabular}{|c|c|c|}
+             \hline
+                 & Modo in-line & Modo display\\
+            \hline
+                & & \\
+                 \texttt \textbackslash frac\{12\}\{48\} & $\quad\quad\frac{1}{4}\quad\quad$ & $\quad\quad\dfrac{1}{4}\quad\quad$ \\
+                        & & \\
+                \texttt \textbackslash dfrac\{12\}\{48\} & $\quad\quad\dfrac{1}{4}\quad\quad$ & $\quad\quad\dfrac{1}{4}\quad\quad$ \\
+                        & & \\
+              \hline
+          \end{tabular}
+        \end{center}
+    \end{frame}
     \subsection{Superlineado y sublineado}
 
     \begin{frame}{Superlineado y sublineado}
+        \begin{columns}[t]
+            \column{0.5\linewidth}
+                \textbf{Superlineado}: 
+
+                Se utiliza \texttt{\^} para escribir en superlineado. Por ejemplo, exponentes.
+            \column{0.5\linewidth}
+                \textbf{Sublineado}: 
+
+                Se utiliza \texttt{\_} para escribir en sublineado. Por ejemplo, índices.
+        \end{columns}
     \end{frame}
     
     \subsection{Paréntesis}
