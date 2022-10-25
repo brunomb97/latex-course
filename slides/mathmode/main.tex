@@ -32,8 +32,8 @@ De esta forma, como \(a = 0\) y \(b = 1\)
     \[ \int_{0}^{1} f(x) dx = 
     \frac{1^4}{4} - \frac{0^4}{4} = \frac{1}{4} \]
     \end{frame}
-    
-    \begin{frame}[fragile]{Modo matemática}
+
+        \begin{frame}[fragile]{Modo matemática}
         Si nos interesa alinear las fórmulas, del estilo
             \begin{align}
             	x^2 - 1 = 0 &\implies x^2 = 1\\
@@ -46,11 +46,41 @@ De esta forma, como \(a = 0\) y \(b = 1\)
     &\implies x = \pm 1.
 \end{align}
             \end{verbatim}
+
+    \end{frame}
+    
+    \begin{frame}[fragile]{Modo matemática}
         \begin{block}{Nota}
         	Observe que \texttt{align} enumera cada una de las lineas del ambiente. Si no requerimos esto, entonces se puede utilizar el comando \texttt{align*}, que no enumera ecuaciones.
         \end{block}
+            \begin{verbatim}
+\begin{align*}
+    x^2 - 1 = 0 &\implies x^2 = 1\\
+    &\implies x = \pm 1.
+\end{align*}
+            \end{verbatim}
+    \begin{align*}
+        x^2 - 1 = 0 &\implies x^2 = 1\\
+        &\implies x = \pm 1.
+    \end{align*}
     \end{frame}
-
+    
+    \begin{frame}[fragile]{Modo matemática}
+        \begin{block}{Nota}
+        	Por otro lado, si solo se le quiere eliminar la enumeración a una sola ecuación, entonces se puede utilizar \texttt{nonumber}
+        \end{block}
+                \begin{verbatim}
+\begin{align}
+    \nonumber x^2 - 1 = 0 &\implies x^2 = 1\\
+    &\implies x = \pm 1.
+\end{align}
+            \end{verbatim}
+    \begin{align}
+        \nonumber  x^2 - 1 = 0 &\implies x^2 = 1\\
+        &\implies x = \pm 1.
+    \end{align}
+    \end{frame}
+    
     \subsection{Notación básica}
     
     \begin{frame}{Notación básica}
@@ -362,40 +392,142 @@ f(x) = \cos x + i \sin x
             \end{verbatim}
     \end{frame} 
     
-    \begin{frame}[fragile]{Comandos de espaciado}
-        Suponga que desea escribir la siguiente fórmula matemática
-            \[ \sum_{\substack{n = 0\\ n \text{ par}}} a_n x^n \]
-            \pause
+    \begin{frame}[fragile]{Integrales}
+        Considere que desea escribir la siguiente fórmula
+            \[ \iiint f(x,y,z) \, \mathrm{d}x \, \mathrm{d}y \, \mathrm{d}z \]
+        \pause
         En una primera instancia, y con lo que hemos visto, uno tendería a escribir así
             \begin{verbatim}
-\[ \sum_{n = 0\\ n \text{ par}} a_n x^n \]
+\[ \int\int\int f(x,y,z) dx dy dz \]
             \end{verbatim}
         \pause
-        Esto arrojaría un error de compilación, por tanto no podriamos utilizarlo. \pause Para esto, utilizamos el comando \texttt{substack}.
+\[ \int\int\int f(x,y,z) dx dy dz \]
+        \pause
+        Se tienen los comandos
+        \[\begin{array}{cc}
+            \text{\texttt{\textbackslash int}} & \displaystyle \int \\
+            \text{\texttt{\textbackslash iint}} & \displaystyle\iint \\
+            \text{\texttt{\textbackslash iiint}} & \displaystyle\iiint
+        \end{array}\]
+    \end{frame} 
+    
+    \begin{frame}[fragile]{Integrales}
+        Considere que desea escribir la siguiente fórmula
+            \[ \iiint f(x,y,z) \, \mathrm{d}x \, \mathrm{d}y \, \mathrm{d}z \]
+        Corrigiendo con lo que hemos visto
             \begin{verbatim}
-\[ \sum_{\substack{n = 0\\ n \text{ par}}} a_n x^n \]
+\[ \iiint f(x,y,z) dx dy dz \]
             \end{verbatim}
+        \pause
+\[ \iiint f(x,y,z) dx dy dz \]
+    \end{frame}
+    
+    \begin{frame}[fragile]{Comandos de espaciado}{}
+    
+        {\Large\[
+        	\begin{array}{ccc}
+                \text{} & \text{\texttt{f(x) dx}} & f(x) dx\\
+                \text{\texttt{\textbackslash, }} & \text{\texttt{f(x) \textbackslash, dx}} & f(x) \, dx\\
+                \text{\texttt{\textbackslash: }} & \text{\texttt{f(x) \textbackslash: dx}} & f(x) \: dx\\
+                \text{\texttt{\textbackslash; }} & \text{\texttt{f(x) \textbackslash; dx}} & f(x) \; dx\\
+                \text{\texttt{\textbackslash{}  }} & \text{\texttt{f(x) \textbackslash{}  dx}} & f(x) \ dx\\
+                \text{\texttt{\textbackslash{}quad }} & \text{\texttt{f(x) \textbackslash quad dx}} & f(x) \quad dx
+        	\end{array}
+        \]}
 
     \end{frame} 
     
-    \subsection{Notación para calculo}
-
-    \begin{frame}{Texto en modo matemática}
-        %Teoria de conjuntos
+    \begin{frame}[fragile]{Integrales}
+        Considere que desea escribir la siguiente fórmula
+            \[ \iiint f(x,y,z) \, \text{d}x \, \text{d}y \, \text{d}z \]
+        Corrigiendo con lo que hemos visto
+            \begin{verbatim}
+\[ \iiint f(x,y,z) \, dx \, dy \, dz \]
+            \end{verbatim}
+        \pause
+\[ \iiint f(x,y,z) \, dx \, dy \, dz \]
+        \pause
+        \begin{block}{}
+        	¿Qué ocurre con la $d$? Usualmente con lo ya escrito bastaría. Pero para algunos, d es un operador y no una variable, por lo que se puede ser aún más detallista.
+        \end{block}
+        {\footnotesize
+            \begin{verbatim}
+\[ \iiint f(x,y,z) \, \mathrm{d}x \, \mathrm{d}y \, \mathrm{d}z \]
+            \end{verbatim}
+        }
     \end{frame}
-        \begin{enumerate}
-        \item{Funciones}
-            \item{Comando ``substack''}
-        \item{Derivadas}
-        \item{Vectores}
-            Ejemplos: Ley Faraday
+
     
-        \item{Radicales}
-        
-        \item{Logica y cuantificadores}
-        
-        \item{Relaciones de conjuntos}
-        
-        \item{Combinatoria} 
-        \end{enumerate}
+    \begin{frame}[fragile]{Derivadas}
+        \begin{columns}
+        	\column{0.5\linewidth}
+        	\[ \frac{\text{d}f}{\text{d}x} \]
+\begin{verbatim}
+\frac{\mathrm{d}f}{\mathrm{d}x}
+\end{verbatim}
+        	\underline{Notación Lagrangeana}
+        	
+        	\[   
+        		\begin{array}{cc}      
+        			\text{\texttt{f'(x)}} & f'(x)\\
+        			\text{\texttt{f'}\texttt{'(x)}} & f''(x)\\
+        			\text{\texttt{f'}\texttt{'}\texttt{'(x)}} & f'''(x)\\
+        			\text{\texttt{f\^{}\{(n)\}(x)}} & f^{(n)}(x)\\
+        		\end{array}
+        	\]
+
+        	\column{0.5\linewidth}
+        	\[ \frac{\partial f}{\partial x} \]
+\begin{verbatim}
+\frac{\partial f}{\partial x}
+\end{verbatim}
+        	\underline{Notación Newtoniana}
+        	
+        	\[   
+        		\begin{array}{cc}      
+        			\text{\texttt{\textbackslash{}dot\{x\}(t)}} & \dot{x}(t)\\
+        			\text{\texttt{\textbackslash{}ddot\{x\}(t)}} & \ddot{x}(t)\\
+        			\text{\texttt{\textbackslash{}dddot\{x\}(t)}} & \dddot{x}(t)\\
+        			\text{\texttt{\textbackslash{}ddddot\{x\}(t)}} & \ddddot{x}(t)\\
+        		\end{array}
+        	\]
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}[fragile]{Vectores}
+        El paquete \texttt{esvect} nos entrega utilidades para vectores.
+        \[ \vv{r}(t) = \langle x(t), y(t), z(t) \rangle \]
+        \begin{verbatim}
+\vv{r}(t) = \langle x(t), y(t), z(t) \rangle
+        \end{verbatim}
+            
+        \textbf{Ley de Inducción de Faraday}:
+        \[ \vv{\nabla} \times \vv{E} = - \frac{\partial \vv{B}}{\partial t} \]
+        \begin{verbatim}
+\vv{\nabla} \times \vv{E} 
+                = -\frac{\partial \vv{B}}{\partial t}
+        \end{verbatim}
+        \[ \oint \vv{E} \cdot \text{d}\vv{s} = \dfrac{\text{d} \Phi_B}{\text{d} t} \]
+        \begin{verbatim}
+\oint \vv{E} \cdot \mathrm{d}\vv{s} 
+                = \dfrac{\mathrm{d} \Phi_B}{\mathrm{d} t} 
+        \end{verbatim}            
+    \end{frame}
+    
+    \begin{frame}{Otras funciones}
+    	\begin{block}{}   
+    		Los comandos del modo matemática son numerosos. Aún no se ha visto:
+                \begin{enumerate}
+                	\item Radicales.
+                	\item Lógica y cuantificadores.
+                	\item Relaciones de conjuntos.
+                	\item Combinatoria.
+                \end{enumerate}
+            Como se ha dicho antes, se tendrán bastantes herramientas para poder encontrar la figura que se busca, como un buscador favorito, DeTeXify y listas grandes de comandos.\\[\baselineskip]
+            
+            \href{http://mirrors.rit.edu/CTAN/info/symbols/comprehensive/symbols-a4.pdf}{The Comprehensive \LaTeX{} Symbols List: http://mirrors.rit.edu/CTAN/info/symbols/comprehensive/symbols-a4.pdf}
+    	\end{block}
+
+    \end{frame}
+
 \end{document}
