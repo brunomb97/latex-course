@@ -11,22 +11,44 @@
     \begin{frame}[fragile]{Modo matemática}
         \begin{columns}[t]
             \column{0.5\linewidth}
-                \textbf{In-line}: se utiliza para escribir fórmulas dentro del párrafo. Se utiliza \texttt{\$math\$}.
+                \textbf{In-line}: se utiliza para escribir fórmulas dentro del párrafo. Se puede utilizar tanto \texttt{\$math\$} o \texttt{\textbackslash ( math \textbackslash )}.
             \column{0.5\linewidth}
                 \textbf{Display}: se utiliza para escribir fórmulas fuera del párrafo, y por tanto, en una linea separada. Se puede utilizar tanto \texttt{\$\$math\$\$} como \texttt{\textbackslash[math\textbackslash]}.
         \end{columns}
+        
+    \end{frame}
+        
+    \begin{frame}[fragile]{Modo matemática}
         \begin{verbatim}
 Como $f(x) = x^3$, entonces
-    $$ \int f(x) dx = \frac{x^4}{4} $$.
-De esta forma,
+    $$ \int_{a}^{b} f(x) dx = \frac{x^4}{4}.$$
+De esta forma, como \(a = 0\) y \(b = 1\)
     \[ \int_{0}^{1} f(x) dx = 
     \frac{1^4}{4} - \frac{0^4}{4} = \frac{1}{4} \]
         \end{verbatim}
 Como $f(x) = x^3$, entonces
-    $$ \int f(x) dx = \frac{x^4}{4} $$.
-De esta forma,
+    $$ \int_{a}^{b} f(x) dx = \frac{x^4}{4}.$$
+De esta forma, como \(a = 0\) y \(b = 1\)
     \[ \int_{0}^{1} f(x) dx = 
     \frac{1^4}{4} - \frac{0^4}{4} = \frac{1}{4} \]
+    \end{frame}
+    
+    \begin{frame}[fragile]{Modo matemática}
+        Si nos interesa alinear las fórmulas, del estilo
+            \begin{align}
+            	x^2 - 1 = 0 &\implies x^2 = 1\\
+            	&\implies x = \pm 1.
+            \end{align}
+        Entonces podemos utilizar el comando \texttt{align}. Este comando nos permite alinear múltiples lineas de ecuaciones a partir del simbolo de alineamiento \&.
+            \begin{verbatim}
+\begin{align}
+    x^2 - 1 = 0 &\implies x^2 = 1\\
+    &\implies x = \pm 1.
+\end{align}
+            \end{verbatim}
+        \begin{block}{Nota}
+        	Observe que \texttt{align} enumera cada una de las lineas del ambiente. Si no requerimos esto, entonces se puede utilizar el comando \texttt{align*}, que no enumera ecuaciones.
+        \end{block}
     \end{frame}
 
     \subsection{Notación básica}
@@ -156,24 +178,204 @@ Por tanto, existe una subsucesión $x_{k_{j}}$.
     
     \subsection{Paréntesis}
 
-    \begin{frame}{Paréntesis}
-        
+    \begin{frame}[fragile]{Paréntesis}
+        Suponga debe escribir en su documento la siguiente fórmula matemática
+\[ \left( \sum_{n = 0}^N \left( \frac{1}{a+n} \right)^2 \right)^2 \]
+        \pause
+        En una primera instancia, uno tendería a escribir así
+            \begin{verbatim}
+\[ (\sum_{n = 0}^N (\frac{1}{a+n})^2)^2 \]
+            \end{verbatim}
+        \pause
+        \[ (\sum_{n = 0}^N (\frac{1}{a+n})^2)^2 \]
+    \end{frame}
+    
+    \begin{frame}[fragile]{Paréntesis}
+        Se pueden establecer otros tamaños de fuente en modo matemática.
+        \[
+            \begin{array}{cc}
+            	\text{\texttt{( a )}} & ( a )\\
+            	& \\
+            	\text{\texttt{\textbackslash{}big( a \textbackslash{}big)}} & \big( a \big)\\
+            	& \\
+            	\text{\texttt{\textbackslash{}Big( a \textbackslash{}Big)}} & \Big( a \Big)\\
+            	& \\
+            	\text{\texttt{\textbackslash{}bigg( a \textbackslash{}bigg)}} & \bigg( a \bigg)\\
+            	& \\
+            	\text{\texttt{\textbackslash{}Bigg( a \textbackslash{}Bigg)}} & \Bigg( a \Bigg)
+            \end{array}
+        \]
+        \pause
+        \LaTeX{} puede automaticamente encajar el tamaño de paréntesis más conveniente utilizando los comandos \texttt{left} y \texttt{right}
+        \footnotesize{
+            \begin{verbatim}
+\[ \left( \sum_{n = 0}^N \left( \frac{1}{a+n} \right)^2 \right)^2 \]
+            \end{verbatim}
+        }
+    \end{frame}
+    
+    \begin{frame}[fragile]{Paréntesis}
+        \begin{alertblock}{Advertencia}
+        	Se requieren necesariamente que los comandos \texttt{left} y \texttt{right} vayan de la mano. Si por alguna razón solo se requiere uno de ellos, entonces se debe utilizar el comando con un punto.
+        \end{alertblock}
+{\footnotesize{
+        \begin{verbatim}
+\[ \left( \sum_{n = 0}^N \left( \frac{1}{a+n} \right. \right. \]
+\[ \left. \sum_{n = 0}^N \left. \frac{1}{a+n} \right) \right) \]
+        \end{verbatim}}}
+\[ \left( \sum_{n = 0}^N \left( \frac{1}{a+n} \right. \right. \]
+\[ \left. \sum_{n = 0}^N \left. \frac{1}{a+n} \right) \right) \]
+    \end{frame}
+    
+    \begin{frame}[fragile]{Opciones para utilizar en paréntesis}
+        \begin{align*}
+            \begin{array}{cc}
+                \text{\texttt{( )}} & (\ )\\
+                \text{\texttt{\textbackslash lbrace \textbackslash rbrace}} & \lbrace\ \rbrace\\
+                \text{\texttt{\textbackslash [\textbackslash ]}}  & [\ ]\\
+                \text{\texttt{|}}  & |\ |\\
+                \text{\texttt{\textbackslash Vert}}  & \Vert \ \Vert\\
+                \text{\texttt{\textbackslash langle \textbackslash rangle}} & \langle\ \rangle\\
+                \text{\texttt{\textbackslash lceil \textbackslash rceil}} & \lceil\ \rceil\\
+                \text{\texttt{\textbackslash lfloor \textbackslash rfloor}} & \lfloor\ \rfloor
+            \end{array}
+        \end{align*}
+        \begin{block}{Nota}
+        	Existe el comando \texttt{middle} que buscar insertar un objeto al medio de una ecuación, y se ajuste al tamaño de los bordes.
+        \end{block}
+
     \end{frame}
     
     \subsection{Texto en modo matemática}
     
-    \begin{frame}{Texto en modo matemática}
-        %Teoria de conjuntos
-    \end{frame}        
+    \begin{frame}[fragile]{Texto en modo matemática}
+        Suponga debe escribir en su documento la siguiente fórmula matemática
+\[ n = ab, \text{ donde } a \text{ y } b \text{ son números naturales.} \]
+        \pause
+        En una primera instancia, uno tendería a escribir así
+            \begin{verbatim}
+\[ n = ab, donde a y b son números naturales. \]
+            \end{verbatim}
+        \pause
+        \[ n = ab, donde a y b son números naturales. \]\\[\baselineskip]
+        
+    \LaTeX{} interpreta todo lo escrito dentro del modo matemática como variables númericas. Para poner texto, se utiliza el comando \texttt{text}.
+    \end{frame}
+    
+    \subsection{Texto en modo matemática}
+    
+    \begin{frame}[fragile]{Texto en modo matemática}
+        En un segundo intento, uno tendería a escribir así
+        {\footnotesize{
+            \begin{verbatim}
+\[ n = ab, \text{donde} a \text{y} b \text{son números naturales.} \]
+            \end{verbatim}
+        }}
+        \pause
+        \[ n = ab, \text{donde} a \text{y} b \text{son números naturales.} \]\\[\baselineskip]
+        
+    Faltaron los espacios. Es recomendable poner espacios alrededor de lo que ingresemos en el comando \texttt{text}
+    \pause
+        {\footnotesize{
+            \begin{verbatim}
+\[ n = ab, \text{ donde } a \text{ y } b \text{ son números naturales. } \]
+            \end{verbatim}
+        }}
+        \[ n = ab, \text{ donde } a \text{ y } b \text{ son números naturales. } \]\\[\baselineskip]
+    \end{frame}
     
     \subsection{Letras griegas}
 
     \begin{frame}{Letras griegas}
-        %Teoria de conjuntos
-
+        Las letras griegas tienen un gran uso en notación cientifica. Estas están disponibles en el modo matemática. En general, basta con escribir un backslash junto con el nombre de la letra. 
+        \begin{center}
+        \includegraphics[scale=0.23]{greek_letters}
+        \end{center}
         \begin{block}{}
-            DeTeXtify.
+            \href{https://detexify.kirelabs.org/classify.html}{\textbf{DeTeXify}} \href{https://detexify.kirelabs.org/classify.html}{(detexify.kirelabs.org/)} es una herramienta excelente para hallar simbolos cuyos nombres no recordemos.
         \end{block}
+    \end{frame} 
+    
+    \subsection{Comandos útiles}
+    \begin{frame}{Fuente Blackboard AMS}
+        Fuente, en general, utilizada para denotar cuerpos matemáticos. Se utiliza el comando \texttt{mathbb}.
+            \[ 
+                \begin{array}{c|c|c}
+                	\text{Conjunto} & \text{Código} & \text{Output}\\
+                	\hline
+                	\text{Naturales} & \text{\texttt{\textbackslash mathbb \{N\}}} & \mathbb{N}\\
+                	\text{Enteros} & \text{\texttt{\textbackslash mathbb \{Z\}}} & \mathbb{Z}\\
+                	\text{Racionales} & \text{\texttt{\textbackslash mathbb \{Q\}}} & \mathbb{Q}\\
+                	\text{Reales} & \text{\texttt{\textbackslash mathbb \{R\}}} & \mathbb{R}\\
+                	\text{Complejos} & \text{\texttt{\textbackslash mathbb \{C\}}} & \mathbb{C}
+                \end{array}
+            \]
+    \end{frame} 
+    
+    \begin{frame}[fragile]{Funciones}
+        Ejemplos para escribir distintos objetos.
+        
+        Polinomios:
+            \begin{verbatim}
+f(x) = a_n x^n + a_{n-1}  x^{n-1} + \cdots + a_1 x + a_0.
+            \end{verbatim}
+\[f(x) = a_n x^n + a_{n-1}  x^{n-1} + \cdots + a_1 x + a_0.
+\]
+        Exponenciales:
+            \begin{verbatim}
+f(x) = c_1 e^{r_1x} + c_2 e^{r_2 x}
+            \end{verbatim}
+\[f(x) = c_1 e^{r_1x} + c_2 e^{r_2 x}
+\]
+    \end{frame} 
+    
+    \begin{frame}[fragile]{Funciones especiales}
+        Funcion de senos y cosenos sin funciones especiales:
+            \begin{verbatim}
+f(x) = cos x + i sin x
+            \end{verbatim}
+\[f(x) = f(x) = cos x + i sin x
+\]
+    Funcion de senos y cosenos con funciones especiales:
+            \begin{verbatim}
+f(x) = \cos x + i \sin x
+            \end{verbatim}
+\[f(x) = f(x) = \cos x + i \sin x
+\]
+        \begin{block}{Nota}
+        	Para utilizar nombres de funciones personalizadas, se puede utilizar tanto los comandos \texttt{text} como \texttt{operatorname}.
+        \end{block}
+    \end{frame} 
+    
+    \begin{frame}[fragile]{Escribir en doble linea en sublineado}
+        Suponga que desea escribir la siguiente fórmula matemática
+            \[ \sum_{\substack{n = 0\\ n \text{ par}}} a_n x^n \]
+            \pause
+        En una primera instancia, y con lo que hemos visto, uno tendería a escribir así
+            \begin{verbatim}
+\[ \sum_{n = 0\\ n \text{ par}} a_n x^n \]
+            \end{verbatim}
+        \pause
+        Esto arrojaría un error de compilación, por tanto no podriamos utilizarlo. \pause Para esto, utilizamos el comando \texttt{substack}.
+            \begin{verbatim}
+\[ \sum_{\substack{n = 0\\ n \text{ par}}} a_n x^n \]
+            \end{verbatim}
+    \end{frame} 
+    
+    \begin{frame}[fragile]{Comandos de espaciado}
+        Suponga que desea escribir la siguiente fórmula matemática
+            \[ \sum_{\substack{n = 0\\ n \text{ par}}} a_n x^n \]
+            \pause
+        En una primera instancia, y con lo que hemos visto, uno tendería a escribir así
+            \begin{verbatim}
+\[ \sum_{n = 0\\ n \text{ par}} a_n x^n \]
+            \end{verbatim}
+        \pause
+        Esto arrojaría un error de compilación, por tanto no podriamos utilizarlo. \pause Para esto, utilizamos el comando \texttt{substack}.
+            \begin{verbatim}
+\[ \sum_{\substack{n = 0\\ n \text{ par}}} a_n x^n \]
+            \end{verbatim}
+
     \end{frame} 
     
     \subsection{Notación para calculo}
