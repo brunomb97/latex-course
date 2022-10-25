@@ -131,20 +131,193 @@
             \end{itemize}
     \end{frame}
     
-%    \subsection{Ambientes flotantes}
-%    \begin{frame}{Ambientes flotantes}
-%        \emph{Ambientes flotantes} son ``contenedores'' para objetos que no puedan o deban \emph{ser cortados por una página}.\\[\baselineskip]
-%
-%        Estos ambientes lidian con el problema de objetos que no encajan en la página actual.\\[\baselineskip]
-%
-%        No forman parte del texto y su entorno en el ambiente \texttt{document}, sino que se posicionan de forma separada (ya sea arriba, al medio, abajo, a la derecha o izquierda, o cualquier posición que el autor especifique).\\[\baselineskip]
-%
-%        Por ejemplo, si no hay suficiente espacio en la página actual, entonces el ambiente flotante aparecerá al inicio de la página siguiente, llenando el espacio que pueda quedar disponible en la página con el texto que continua al ambiente.\\[\baselineskip]
-%        
-%        Estos objetos poseen un subtitulo que permita identificarlos y/o describirlos.
-%    \end{frame}
+    \begin{frame}[fragile]{Arrays}
+    \[
+    	\begin{array}{ccc}
+            a_11 & a_12 & a_13 \\
+            a_21 & a_22 & a_23 \\  
+            a_31 & a_32 & a_33
+        \end{array}
+    \]
+\begin{verbatim}
+\begin{array}{ccc}
+    a_11 & a_12 & a_13 \\
+    a_21 & a_22 & a_23 \\  
+    a_31 & a_32 & a_33
+\end{array}
+\end{verbatim}
 
-    \begin{frame}{Matrices}
+        \begin{block}{Nota}
+        	Un ambiente array \emph{debe} ir en el modo matemática.
+        \end{block}
+    \end{frame}
+
+    \begin{frame}[fragile]{Matrices}
+        \begin{columns}
+        	\column{0.5\linewidth}
+                \[ \left(
+                    \begin{array}{ccc}
+                        a_{11} & a_{12} \\
+                        a_{21} & a_{22} \\  
+                        a_{31} & a_{32}
+                    \end{array}
+                    \right)
+                \] 
+\begin{verbatim}
+\left( \begin{array}{cc}
+    a_{11} & a_{12} \\
+    a_{21} & a_{22} \\  
+    a_{31} & a_{32}
+\end{array} \right)
+\end{verbatim}
+                
+        	\column{0.5\linewidth}
+                \[ \left[
+                    \begin{array}{ccc}
+                        a_{11} & a_{12} \\
+                        a_{21} & a_{22} \\  
+                        a_{31} & a_{32}
+                    \end{array}
+                    \right]
+                \] 
+\begin{verbatim}
+\left[ \begin{array}{cc}
+    a_{11} & a_{12} \\
+    a_{21} & a_{22} \\  
+    a_{31} & a_{32}
+\end{array} \right]
+\end{verbatim}
+                
+        \end{columns}
+    \end{frame}
+    
+    \begin{frame}[fragile]{Matrices}
+        \begin{columns}
+        	\column{0.5\linewidth}
+                \[ \begin{pmatrix}
+                        a_{11} & a_{12} \\
+                        a_{21} & a_{22} \\  
+                        a_{31} & a_{32}
+                    \end{pmatrix}
+                \] 
+\begin{verbatim}
+\end{pmatrix}
+    a_{11} & a_{12} \\
+    a_{21} & a_{22} \\  
+    a_{31} & a_{32}
+\end{pmatrix}
+\end{verbatim}
+                
+        	\column{0.5\linewidth}
+                \[ \begin{bmatrix}
+                        a_{11} & a_{12} \\
+                        a_{21} & a_{22} \\  
+                        a_{31} & a_{32}
+                    \end{bmatrix}
+                \] 
+\begin{verbatim}
+\begin{bmatrix}
+    a_{11} & a_{12} \\
+    a_{21} & a_{22} \\  
+    a_{31} & a_{32}
+\end{bmatrix}
+\end{verbatim}
+        \end{columns}
+    \end{frame}
+    
+    \begin{frame}[fragile]{Matrices}
+        \[ \begin{pmatrix}
+                        a_{11} & a_{12} & \cdots\\
+                        a_{21} & a_{22} & \cdots\\  
+                        \vdots & \vdots & \ddots
+                    \end{pmatrix}
+                \] 
+\begin{verbatim}
+\end{pmatrix}
+    a_{11} & a_{12} & \cdots\\
+    a_{21} & a_{22} & \cdots\\  
+    \vdots & \vdots & \ddots
+\end{pmatrix}
+\end{verbatim}
+    \end{frame}
+
+    
+    \subsection{Ambientes flotantes}
+    
+    \begin{frame}{Ambientes flotantes}
+        \emph{Ambientes flotantes} son ``contenedores'' para objetos que no puedan o deban \emph{ser cortados por una página}.\\[\baselineskip]
+
+        Estos ambientes lidian con el problema de objetos que no encajan en la página actual.\\[\baselineskip]
+
+        No forman parte del texto y su entorno en el ambiente \texttt{document}, sino que se posicionan de forma separada (ya sea arriba, al medio, abajo, a la derecha o izquierda, o cualquier posición que el autor especifique).\\[\baselineskip]
+
+        Por ejemplo, si no hay suficiente espacio en la página actual, entonces el ambiente flotante aparecerá al inicio de la página siguiente, llenando el espacio que pueda quedar disponible en la página con el texto que continua al ambiente.\\[\baselineskip]
+        
+        Estos objetos poseen un subtitulo que permita identificarlos y/o describirlos.
+    \end{frame}
+
+    \begin{frame}[fragile]{Figures}
+        
+        \begin{figure}
+            \begin{center}
+                \includegraphics[scale=0.1]{../utfsm}
+        	\end{center}
+        	\caption{Logo de la Universidad Técnica Federico Santa María}
+        \end{figure}
+        
+        \begin{verbatim}
+\begin{figure}
+    \begin{center}
+        \includegraphics[scale=0.1]{../utfsm}
+    \end{center}
+    \caption{Logo de la Universidad Técnica 
+            Federico Santa María}
+\end{figure}
+        \end{verbatim}
+        \begin{block}{Nota}
+            Agregar el argumento \texttt{[H]} (de ``here'') al ambiente \texttt{figure} permitirá al ambiente flotante mantenerse en la posición que se indicó en el código.
+        \end{block}
 
     \end{frame}
+    
+    \begin{frame}[fragile]{Tables}
+    \scriptsize{
+        \begin{table}
+            \begin{center}
+                \begin{tabular}{|l|ccccc|}
+                    \hline
+                    Tipo & C & A & A & C & S\\
+                    \hline
+                    Diámetro & 22.44 & 19.85 & 17.66 & 21.25 & 40.55\\
+                    Peso & 11.6 & 16.8 & 14.4 & 12.3 & 2.1 \\
+                    Fragmentos & 2 & 3 & 3 & 2 & 1 \\
+                    \hline
+                    \hline
+                    Tipo & A & M & C & M & C\\
+                    \hline
+                    Diámetro & 22.9 & 30.95 & 24.7 & 32.15 & 24.95 \\
+                    Peso & 9.1 & 4.5 & 7.7 & 4.8 & 7.7 \\
+                    Fragmentos & 2 & 1 & 2 & 1 & 1 \\
+                    \hline
+                \end{tabular}
+            \end{center}
+            \caption{Muestra de 10 ejemplares de meteoritos caidos en territorio chileno}
+        \end{table}
+    \begin{verbatim}
+\begin{table}
+    \begin{center}
+        \begin{tabular}{|l|ccccc|}
+            \hline
+            Tipo & C & A & A & C & S\\
+            \hline
+            Diámetro & 22.44 & 19.85 & 17.66 & 21.25 & 40.55\\
+            Peso & 11.6 & 16.8 & 14.4 & 12.3 & 2.1 \\
+            Fragmentos & 2 & 3 & 3 & 2 & 1 \\
+            \hline
+    \end{center}
+    \caption{Muestra de 5 ejemplares de meteoritos caidos en territorio chileno}
+\end{table}
+    \end{verbatim}}
+    \end{frame}
+    
 \end{document}

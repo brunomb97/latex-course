@@ -27,7 +27,13 @@
                 
         \end{enumerate}
     \end{frame}
-        
+    
+    \begin{frame}{Tamaños de fuente}
+        \begin{center}
+            \includegraphics[scale=0.25]{sizes}
+        \end{center}
+    \end{frame}
+    
     \subsection{Estilos de fuente}
     \begin{frame}{Estilos de fuente}
         En particular, tenemos tres herramientas usuales para dar estilo al texto presentado.
@@ -111,6 +117,27 @@
     \item Este es el segundo item.
 \end{itemize}
         \end{enumerate}
+    \end{frame}
+    
+    \begin{frame}[fragile]{Listas}
+        
+    Se pueden personalizar los puntos de las enumeraciones. Por cada uno, se puede hacer
+            \begin{verbatim}
+\begin{enumerate}
+    \item Este es el primer item.
+    \item[A] Este es el segundo item.
+    \item[5] Este es el tercer item.
+\end{enumerate}
+            \end{verbatim}
+            \begin{enumerate}
+                \item Este es el primer item.
+                \item[A] Este es el segundo item.
+                \item[5] Este es el tercer item.
+            \end{enumerate}
+    \begin{block}{}
+    	El paquete \texttt{enumi} complementa las distintas opciones que se tienen para \texttt{enumerate}.
+    \end{block}
+
     \end{frame}
     
     \subsection{Alineamiento de texto}
@@ -218,7 +245,19 @@ Esta es la cuarta linea.
     
     \subsection{Otras herramientas útiles}
     \begin{frame}{Otras herramientas útiles}
-       % \subsection{Ambientes para definiciones, teoremas y demostraciones}}
+       \begin{enumerate}
+            \item \texttt{verbatim}: Incluido en \LaTeX{}. Permite escribir códigos con fuente de maquina de escribir.
+            \item \texttt{tikz}: El paquete más potente para gráficos en general.
+            \item \texttt{minted}: Paquete que provee ambientes de highlighting de códigos, según el lenguaje.
+            \item \texttt{exam}: Es un tipo de documento (y por tanto, va en \texttt{documentclass}). Permite crear evaluaciones y preguntas.
+            \item \texttt{pgfplots}: Paquete basado en \texttt{TikZ}. Es una herramienta de visualización potente para graficos técnicos y cientificos.
+            \item \texttt{amsthm}: Paquete de ambientes para definiciones, teoremas y demostraciones.
+            \item \texttt{algpseudocode}: Paquete de ambientes para pseudo códigos.
+            \item \texttt{chemfig}: Paquete de ambientes para fórmulas químicas.
+            \item \texttt{tikz-feynman}: Paquete de ambientes para diagramas de Feynman.
+            \item \texttt{circuitikz}: Paquete de ambientes para circuitos eléctricos y eléctronicos.
+       \end{enumerate}
+
     \end{frame}
     
 \end{document}
