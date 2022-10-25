@@ -33,7 +33,7 @@
     \maketitle
 \\end{frame}
 
-\\begin{frame}{Indice}
+\\begin{frame}
     \tableofcontents
 \\end{frame}
         \end{verbatim}
@@ -45,10 +45,20 @@
 \subtitle{Aquí va un texto corto}
 \logo{\includegraphics{utfsm}}
         \end{verbatim}
-
     \end{frame}
         
-    
+    \begin{frame}[fragile]{Más estructura}
+        También se puede crear un índice donde destaque la sección y sub-sección actual.
+        \begin{verbatim}
+\\begin{frame}
+    \tableofcontents[currentsection]
+\\end{frame}
+\\begin{frame}
+    \tableofcontents[currentsection,currentsubsection]
+\\end{frame}
+        \end{verbatim}
+    \end{frame}
+
     \subsection{Múltiples columnas en diapositivas}
 
     \begin{frame}[fragile]{Múltiples columnas}

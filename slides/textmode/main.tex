@@ -12,17 +12,17 @@
             \item \textbf{En todo el texto}: Se define en \texttt{\textbackslash documentclass[]\{\}}
 
             \item \textbf{En porciones del texto}:
-                Comandos:
+                Comandos, ordenados de menor a mayor tamaño:
                 \begin{enumerate}
-                    \item \texttt{\textbackslash tiny}:
-                    \item \texttt{\textbackslash scriptsize}:
-                    \item \texttt{\textbackslash footnotesize}:
-                    \item \texttt{\textbackslash normalsize}:
-                    \item \texttt{\textbackslash large}:
-                    \item \texttt{\textbackslash Large}:
-                    \item \texttt{\textbackslash LARGE}:
-                    \item \texttt{\textbackslash huge}:
-                    \item \texttt{\textbackslash Huge}:
+                    \item \texttt{\textbackslash tiny}
+                    \item \texttt{\textbackslash scriptsize}
+                    \item \texttt{\textbackslash footnotesize}
+                    \item \texttt{\textbackslash normalsize}
+                    \item \texttt{\textbackslash large}
+                    \item \texttt{\textbackslash Large}
+                    \item \texttt{\textbackslash LARGE}
+                    \item \texttt{\textbackslash huge}
+                    \item \texttt{\textbackslash Huge}
                 \end{enumerate}
                 
         \end{enumerate}
@@ -34,14 +34,27 @@
             \begin{enumerate}
                 \item Negrita: \texttt{\textbackslash textbf} Este es un texto en \textbf{negrita}.
                     
-                \item Cursiva: \texttt{\textbackslash textit}
-                \item Subrayado: \texttt{\textbackslash underline}
+                \item Cursiva: \texttt{\textbackslash textit} Este es un texto en \textit{cursiva}.
+                \item Subrayado: \texttt{\textbackslash underline} Este es un texto \underline{subrayado}.
+                \item Texto tipográfico: \texttt{\textbackslash texttt} Este es un texto \texttt{tipográfico}.
+                \item Texto Small Caps: \texttt{\textbackslash textsc} Este es un texto \textsc{En Formato Sc., que consiste que las mínusculas son mayúsculas pero de un tamaño menor}.
             \end{enumerate}
     \end{frame}
 
     \subsection{Correcto uso de brackets}
-    \begin{frame}{Correcto uso de brackets}
-    
+    \begin{frame}[fragile]{Correcto uso de brackets}
+\scriptsize{
+        \begin{verbatim}
+\textbf{\textit{\underline{Este es un texto en negritas, en cursiva y subrayado.}}}
+        \end{verbatim}
+        
+        \begin{verbatim}
+                           Este es un texto en negritas, en cursiva y subrayado.
+                \underline{                                                     }
+        \textit{                                                                 }
+\textbf{                                                                          }
+        \end{verbatim}
+}
     \end{frame}
     
     \subsection{Listas}
@@ -54,6 +67,10 @@
     \item Este es el segundo item.
 \end{enumerate}
                 \end{verbatim}
+\begin{enumerate}
+    \item Este es el primer item.
+    \item Este es el segundo item.
+\end{enumerate}
             \item Lista no enumerada:
                 \begin{verbatim}
 \begin{itemize}
@@ -61,6 +78,38 @@
     \item Este es el segundo item.
 \end{itemize}
                 \end{verbatim}
+\begin{itemize}
+    \item Este es el primer item.
+    \item Este es el segundo item.
+\end{itemize}
+        \end{enumerate}
+    \end{frame}
+    
+    \subsection{Listas}
+    \begin{frame}[fragile]{Listas}
+        \begin{enumerate}
+            \item Lista enumerada:
+                \begin{verbatim}
+\begin{enumerate}
+    \item Este es el primer item.
+    \item Este es el segundo item.
+\end{enumerate}
+                \end{verbatim}
+\begin{enumerate}
+    \item Este es el primer item.
+    \item Este es el segundo item.
+\end{enumerate}
+            \item Lista no enumerada:
+                \begin{verbatim}
+\begin{itemize}
+    \item Este es el primer item.
+    \item Este es el segundo item.
+\end{itemize}
+                \end{verbatim}
+\begin{itemize}
+    \item Este es el primer item.
+    \item Este es el segundo item.
+\end{itemize}
         \end{enumerate}
     \end{frame}
     
@@ -112,6 +161,35 @@ Este texto está alineado a la derecha.
         \end{columns}
     \end{frame}
 
+    \subsection{Indentación en texto}
+    
+    \begin{frame}[fragile]{Párrafos}
+        Para separar párrafos en un documento, se inserta una linea vacía entre uno y otro. Por ejemplo:
+        \begin{verbatim}
+Este es el primer párrafo que usaremos como ejemplo para 
+observar como \LaTeX{} separa párrafos. Por si no se habia
+dicho antes, el comando \LaTeX{} no genera el logo de LaTeX
+en forma de texto.
+
+Este es otro texto que usaremos como ejemplo, que consiste
+en el segundo párrafo.
+        \end{verbatim}
+        \begin{block}{Nota}
+        \LaTeX{} automáticamente indenta automaticamente nuevos párrafos. 
+        \end{block}
+    
+    \end{frame}
+    
+    \begin{frame}{Indentación de un párrafo}
+        \begin{alertblock}{Nota}
+        La indentación dentro del código de \LaTeX{} es distinta a la indentación que aparece al final del documento.
+        \end{alertblock}
+        
+        \begin{block}{Nota}
+        Si deseamos especificamente no indentar un párrafo, se debe anteponer al párrafo el comando \texttt{\textbackslash noindent}.
+        \end{block}
+    \end{frame}
+
     \subsection{Saltos de linea}
 
     \begin{frame}[fragile]{Saltos de linea}
@@ -120,10 +198,12 @@ Este texto está alineado a la derecha.
 Esta es la primera linea.\\
 Esta es la segunda linea.\\[\baselineskip]
 Esta es la tercera linea.\\[2\baselineskip]
+Esta es la cuarta linea.
             \end{verbatim}
 Esta es la primera linea.\\
 Esta es la segunda linea.\\[\baselineskip]
 Esta es la tercera linea.\\[2\baselineskip]
+Esta es la cuarta linea.
     \end{frame}
 
     \subsection{Forzar nueva página}
