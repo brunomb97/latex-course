@@ -1,17 +1,264 @@
 \documentclass[../notes.tex]{subfiles}
 \begin{document}
-	\section{Ambiente ``tabular''}
+
+    \subsection{Importar imagenes}
+        Nota: Requiere el paquete \texttt{graphicx}
+
+        Para incluir una fotografía, utilice el comando 
+        \begin{verbatim}
+\includegraphics[optional]{nombre_archivo}
+        \end{verbatim}
+% \textbackslash includegraphics \{ nombre_archivo \}
+        \textbf{Comandos opcionales}:
+            \begin{enumerate}
+                \item \texttt{scale}: Escala la imagen. Valores menores a 1 reducen el tamaño de la imagen manteniendo su relación de aspecto; valores mayores a 1 aumentan el tamaño.
+        \begin{verbatim}
+\includegraphics[scale=0.75]{nombre_archivo}
+        \end{verbatim}
+                \item \texttt{width}: Establece un valor fijo para el ancho de la imagen.
+                \item \texttt{height}: Establece un valor fijo para la altura de la imagen.
+            \end{enumerate}
+        Si se indica solo un parámetro, entonces se mantendrá la relación de aspecto. Si se identifican dos parámetros, entonces hará ambos.
+
+    \subsection{Tablas}
     
-        \subsection{Bordes}
+        Estructura general de una tabla, usando el comando \texttt{tabular}.
         
-        \subsection{Tamaño de columnas fijo}
+            \begin{verbatim}
+\begin{tabular}{ c c c }
+    Celda 1 & Celda 2 & Celda 3 \\ 
+    Celda 4 & Celda 5 & Celda 6 \\  
+    Celda 7 & Celda 8 & Celda 9    
+\end{tabular}
+            \end{verbatim}
+            
+\begin{tabular}{ c c c }
+    Celda 1 & Celda 2 & Celda 3 \\ 
+    Celda 4 & Celda 5 & Celda 6 \\  
+    Celda 7 & Celda 8 & Celda 9    
+\end{tabular}\\[\baselineskip]
+
+        El primer parámetro del ambiente (en el ejemplo, \texttt{\{ c c c \}}) indica cuántas columnas tendrá la tabla. El valor \texttt{c} (center) indica que los textos de la columna se alinearán en el centro.\\[\baselineskip]
+
+        Se utilizará \texttt{l} (left) si se desea alinear a la izquierda,y \texttt{r} (right) si se desea alinear a la derecha.
+
+        Luego, se establece la estructura de la tabla.
+            \begin{itemize}
+                \item Para separar filas, se requiere utilizar \texttt{\textbackslash \textbackslash} (interpretándolo como salto de linea).
+                \item Para separar celdas en una misma fila, se utiliza \texttt{\&} (interpretándolo como salto de una columna a otra).
+            \end{itemize}
+
+    \subsection{Bordes}
+    
+        \textbf{Lineas vérticales:}         
+            \begin{verbatim}
+\begin{tabular}{|c|c c|}
+    Celda 1 & Celda 2 & Celda 3 \\ 
+    Celda 4 & Celda 5 & Celda 6 \\  
+    Celda 7 & Celda 8 & Celda 9    
+\end{tabular}
+            \end{verbatim}
+            
+\begin{tabular}{|c|c c|}
+    Celda 1 & Celda 2 & Celda 3 \\ 
+    Celda 4 & Celda 5 & Celda 6 \\  
+    Celda 7 & Celda 8 & Celda 9    
+\end{tabular}\\[\baselineskip]
+
+        \textbf{Lineas horizontales:}         
+            \begin{verbatim}
+\begin{tabular}{|c|c c|}
+    \hline
+    Celda 1 & Celda 2 & Celda 3 \\
+    \hline
+    Celda 4 & Celda 5 & Celda 6 \\  
+    Celda 7 & Celda 8 & Celda 9 \\
+    \hline
+\end{tabular}
+            \end{verbatim}
+            
+\begin{tabular}{|c|c c|}
+    \hline
+    Celda 1 & Celda 2 & Celda 3 \\
+    \hline
+    Celda 4 & Celda 5 & Celda 6 \\  
+    Celda 7 & Celda 8 & Celda 9 \\
+    \hline
+\end{tabular}
+    Nota: En caso de necesitar agregar una linea al final de la tabla, entonces necesariamente se debe agregar un salto de linea al final de esta, o si no, ocurrirá un error de compilación.
+    
+        Existen distintas herramientas disponibles para construir tablas en \LaTeX{} de forma sencilla y amigable.
+
+            \begin{itemize}
+                \item \textbf{LaTeX Tables Editor}: \href{https://www.latex-tables.com/}{latex-tables.com}
+                \item \textbf{Tables Generator}: \href{https://www.tablesgenerator.com/latex_tables}{tablesgenerator.com}
+                \item Muchas más disponibles en internet, que puedan ser encontradas a través de un buscador.
+            \end{itemize}
+
+        Estas permitirán, también, realizar acciones como:
+            \begin{itemize}
+                \item Importar tablas desde un Excel.
+                \item Fijar ancho y alto de una columna.
+                \item Combinar celdas.
+            \end{itemize}
+            
+    \[
+    	\begin{array}{ccc}
+            a_11 & a_12 & a_13 \\
+            a_21 & a_22 & a_23 \\  
+            a_31 & a_32 & a_33
+        \end{array}
+    \]
+\begin{verbatim}
+\begin{array}{ccc}
+    a_11 & a_12 & a_13 \\
+    a_21 & a_22 & a_23 \\  
+    a_31 & a_32 & a_33
+\end{array}
+\end{verbatim}
+
+    Nota: Un ambiente array \emph{debe} ir en el modo matemática.
+
+                \[ \left(
+                    \begin{array}{ccc}
+                        a_{11} & a_{12} \\
+                        a_{21} & a_{22} \\  
+                        a_{31} & a_{32}
+                    \end{array}
+                    \right)
+                \] 
+\begin{verbatim}
+\left( \begin{array}{cc}
+    a_{11} & a_{12} \\
+    a_{21} & a_{22} \\  
+    a_{31} & a_{32}
+\end{array} \right)
+\end{verbatim}
+                
+                \[ \left[
+                    \begin{array}{ccc}
+                        a_{11} & a_{12} \\
+                        a_{21} & a_{22} \\  
+                        a_{31} & a_{32}
+                    \end{array}
+                    \right]
+                \] 
+\begin{verbatim}
+\left[ \begin{array}{cc}
+    a_{11} & a_{12} \\
+    a_{21} & a_{22} \\  
+    a_{31} & a_{32}
+\end{array} \right]
+\end{verbatim}
+
+                \[ \begin{pmatrix}
+                        a_{11} & a_{12} \\
+                        a_{21} & a_{22} \\  
+                        a_{31} & a_{32}
+                    \end{pmatrix}
+                \] 
+\begin{verbatim}
+\end{pmatrix}
+    a_{11} & a_{12} \\
+    a_{21} & a_{22} \\  
+    a_{31} & a_{32}
+\end{pmatrix}
+\end{verbatim}
+                
+                \[ \begin{bmatrix}
+                        a_{11} & a_{12} \\
+                        a_{21} & a_{22} \\  
+                        a_{31} & a_{32}
+                    \end{bmatrix}
+                \] 
+\begin{verbatim}
+\begin{bmatrix}
+    a_{11} & a_{12} \\
+    a_{21} & a_{22} \\  
+    a_{31} & a_{32}
+\end{bmatrix}
+\end{verbatim}
+    
+        \[ \begin{pmatrix}
+                        a_{11} & a_{12} & \cdots\\
+                        a_{21} & a_{22} & \cdots\\  
+                        \vdots & \vdots & \ddots
+                    \end{pmatrix}
+                \] 
+\begin{verbatim}
+\end{pmatrix}
+    a_{11} & a_{12} & \cdots\\
+    a_{21} & a_{22} & \cdots\\  
+    \vdots & \vdots & \ddots
+\end{pmatrix}
+\end{verbatim}
+
+    
+    \subsection{Ambientes flotantes}
+    
+        \emph{Ambientes flotantes} son ``contenedores'' para objetos que no puedan o deban \emph{ser cortados por una página}.\\[\baselineskip]
+
+        Estos ambientes lidian con el problema de objetos que no encajan en la página actual.\\[\baselineskip]
+
+        No forman parte del texto y su entorno en el ambiente \texttt{document}, sino que se posicionan de forma separada (ya sea arriba, al medio, abajo, a la derecha o izquierda, o cualquier posición que el autor especifique).\\[\baselineskip]
+
+        Por ejemplo, si no hay suficiente espacio en la página actual, entonces el ambiente flotante aparecerá al inicio de la página siguiente, llenando el espacio que pueda quedar disponible en la página con el texto que continua al ambiente.\\[\baselineskip]
         
-        \subsection{Multicolumnas}
+        Estos objetos poseen un subtitulo que permita identificarlos y/o describirlos.
         
-    \section{Ambiente ``array''}
+        \begin{figure}
+            \begin{center}
+                \includegraphics[scale=0.1]{../utfsm}
+        	\end{center}
+        	\caption{Logo de la Universidad Técnica Federico Santa María}
+        \end{figure}
         
-        \subsection{Matrices}
+        \begin{verbatim}
+\begin{figure}
+    \begin{center}
+        \includegraphics[scale=0.1]{../utfsm}
+    \end{center}
+    \caption{Logo de la Universidad Técnica 
+            Federico Santa María}
+\end{figure}
+        \end{verbatim}
+        Nota: Agregar el argumento \texttt{[H]} (de ``here'') al ambiente \texttt{figure} permitirá al ambiente flotante mantenerse en la posición que se indicó en el código.
         
-    \section{Combinar celdas}
+        \begin{table}
+            \begin{center}
+                \begin{tabular}{|l|ccccc|}
+                    \hline
+                    Tipo & C & A & A & C & S\\
+                    \hline
+                    Diámetro & 22.44 & 19.85 & 17.66 & 21.25 & 40.55\\
+                    Peso & 11.6 & 16.8 & 14.4 & 12.3 & 2.1 \\
+                    Fragmentos & 2 & 3 & 3 & 2 & 1 \\
+                    \hline
+                    \hline
+                    Tipo & A & M & C & M & C\\
+                    \hline
+                    Diámetro & 22.9 & 30.95 & 24.7 & 32.15 & 24.95 \\
+                    Peso & 9.1 & 4.5 & 7.7 & 4.8 & 7.7 \\
+                    Fragmentos & 2 & 1 & 2 & 1 & 1 \\
+                    \hline
+                \end{tabular}
+            \end{center}
+            \caption{Muestra de 10 ejemplares de meteoritos caidos en territorio chileno}
+        \end{table}
+    \begin{verbatim}
+\begin{table}
+    \begin{center}
+        \begin{tabular}{|l|ccccc|}
+            \hline
+            Tipo & C & A & A & C & S\\
+            \hline
+            Diámetro & 22.44 & 19.85 & 17.66 & 21.25 & 40.55\\
+            Peso & 11.6 & 16.8 & 14.4 & 12.3 & 2.1 \\
+            Fragmentos & 2 & 3 & 3 & 2 & 1 \\
+            \hline
+    \end{center}
+    \caption{Muestra de 5 ejemplares de meteoritos caidos en territorio chileno}
+\end{table}
+    \end{verbatim}
 \end{document}
  

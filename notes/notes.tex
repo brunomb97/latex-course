@@ -13,10 +13,14 @@
 % Agregar fancyvrb
 \usepackage{fancyvrb}
 
+% Agregar imágnes
+\usepackage{graphicx}
+
 % Agregar mathmode
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{esvect}
 
 % Permitir escribir en múltiples archivos
 \usepackage{subfiles}
@@ -28,10 +32,15 @@
     
 \maketitle
 \tableofcontents
-	
+
+\part{LaTeX}
 \chapter{Introducción}
 	
     \subfile{introduccion/main.tex}
+
+\chapter{Estructura de un archivo \LaTeX{}}
+    
+    \subfile{estructura/main.tex}
     
 \chapter{Manipulación básica de textos}
     
@@ -49,9 +58,14 @@
 
     \subfile{beamer/main.tex}
     
-%\chapter{El paquete ``tikz''}
+\chapter{Palabras finales}
 
-%    \subfile{tikz/main.tex}
+    \subfile{conclusiones/main.tex}
+    
+\part{Tikz}
+\chapter{El paquete ``tikz''}
+
+    \subfile{tikz/main.tex}
     
 \end{document}
 

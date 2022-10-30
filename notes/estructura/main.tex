@@ -1,0 +1,122 @@
+\documentclass[../notes.tex]{subfiles}
+
+\begin{document}
+
+    Un documento en \LaTeX{} se compone de dos principales segmentos: el preámbulo y el cuerpo del documento (denotado por \texttt{document}).\\
+    \vspace{1em}
+        $\left. \begin{minipage}{0.8\linewidth}
+            \begin{verbatim}
+\documentclass[]{article}
+
+\usepackage[margin=1.25in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+
+\title{Curso de \LaTeX{}}
+\author{Bruno Martinez Barrera}
+\date{25 de octubre de 2022}
+            \end{verbatim}
+        \end{minipage} \right\rbrace$ Preámbulo
+        
+        $\left. \begin{minipage}{0.8\linewidth}
+            \begin{verbatim}
+\begin{document}
+    Aquí va el texto.
+
+    \[ f(x) = \int_{0}^{x} t^{2} dt\] %Integral
+
+    \includegraphics[scale=0.5]{image.png}
+\end{document}
+            \end{verbatim}
+        \end{minipage} \right\rbrace$ Documento
+
+    \subsection{Preámbulo}
+
+        \subsection{\texttt{documentclass}}
+        El preámbulo debe iniciar con el comando \texttt{documentclass}, que especifica la estructura general del documento. Este comando se estructura de la siguiente forma:
+        \[ \text{\texttt{\textbackslash documentclass}}\underbrace{\text{\texttt{[letterpage,12pt]}}}_{\text{opcional}}\underbrace{\text{\texttt{\{article\}}}}_{\text{tipo de documento}} \]
+
+        \[ \text{\texttt{\textbackslash documentclass}}\underbrace{\text{\texttt{[letterpage,12pt]}}}_{\text{opcional}}\underbrace{\text{\texttt{\{article\}}}}_{\text{tipo de documento}} \]
+            \begin{enumerate}
+                \item \textbf{Tipo de documento}: 
+                    \begin{itemize}
+                        \item \texttt{article}: Estructura general para escribir articulos, ya sea publicaciones cientificas, documentación para programas y, en general, cualquier tipo de documento corto que no requiera una división compleja de partes y capítulos.
+                        \item \texttt{report}: Tipos de articulos largos, que contengan una cantidad mayor de capítulos, como libros pequeños y tesis.
+                        \item \texttt{book}: Usado para libros y trabajos extensos.
+                        \item \texttt{letter}: Para cartas.
+                        
+                    \end{itemize}
+                \end{enumerate}
+                
+        \[ \text{\texttt{\textbackslash documentclass}}\underbrace{\text{\texttt{[letterpage,12pt]}}}_{\text{opcional}}\underbrace{\text{\texttt{\{article\}}}}_{\text{tipo de documento}} \]
+            \begin{enumerate}
+                \setcounter{enumi}{1}
+                \item Opcional:
+                    \begin{itemize}
+                        \item Tamaño de papel: \texttt{a4, letterpage}
+                        \item Tamaño de fuente: \texttt{9pt,10pt,11pt,12pt}. El valor por defecto es \texttt{10pt}.
+                        \item Más opciones que puedan ser requeridas por otros usuarios.
+                    \end{itemize}
+            \end{enumerate}
+        
+    
+    \subsection{\texttt{usepackage}}
+    
+        
+        Luego, suelen agregarse distintos paquetes. Los siguientes
+            \begin{itemize}
+                \item \texttt{geometry}: Permite editar el diseño de página. En particular, nos permitirá modificar los márgenes.
+                \item \texttt{amsmath}: Contiene herramientas muy útiles para el modo matemática. Es mantenido por American Mathematical Society, y entrega los comandos más usados por aquellos que escriben en LaTeX.
+                \item \texttt{amssymb}: Contiene herramientas muy útiles para el modo matemática. En particular, simbolos matemáticos.
+                \item \texttt{graphicx}: Permite importar y manipular de imagenes.
+            \end{itemize}
+
+    \subsection{Título, autor y fecha}
+    
+        \begin{enumerate}
+            \item \texttt{\textbackslash title}: El título del documento.
+            \item \texttt{\textbackslash author}: Para indicar el nombre de los autores.
+            \item \texttt{\textbackslash date}: puedes ingresar la fecha manualmente, o bien utilizar el comando \texttt{\textbackslash today} para indicar la fecha actual de la última vez que se compiló el archivo.
+            \item \texttt{\textbackslash institute}: universidad o institución asociada.
+        \end{enumerate}
+        
+    \subsection{Ambiente \texttt{document}}
+    
+        En el ambiente \texttt{document} es donde se presenta el cuerpo: el contenido actual que se desea mostrar.
+
+    \subsection{Comentarios}
+
+        De alguna forma, en \LaTeX{} se programa código. Por tanto, puede ser útil \emph{incluir comentarios} dentro de los documentos.
+        
+        Ejemplos para utilizar comentarios:
+        
+            \begin{itemize}
+                \item Para indicar notas de "tareas pendientes".
+                \item Comentarios que expliquen el tema.
+            \end{itemize}
+            
+        Esto se hace de forma de escribir \texttt{\%} y el comentario deseado. Agregar texto después de un \% no aparecerá en el documento final.
+        
+        \begin{verbatim}
+Este texto si aparecerá en el documento. % Sin embargo,
+                                            esto permanecerá
+                                            como comentario
+                                            sólo en el código.
+        \end{verbatim}
+
+    
+    \subsection{Unidades de medida}
+
+        Se suelen utilizar en algunos comandos donde un párametro corresponde a la medida de algo. Por ejemplo: márgenes, anchos de columnas, etc.
+        \begin{center}
+            \begin{tabular}{ll}
+                in & pulgadas\\
+                cm & centimetros\\
+                mm & milimetros\\
+                pt & puntos\\
+                em & el ancho de una m\\
+                ex & el alto de una x
+            \end{tabular}
+        \end{center}
+\end{document}
+ 

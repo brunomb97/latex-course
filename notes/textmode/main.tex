@@ -1,140 +1,172 @@
 \documentclass[../notes.tex]{subfiles}
 \begin{document}
 
-    En esta sección aprenderemos a
+    \subsection{Tamaños de fuente}
+        \begin{enumerate}
+            \item \textbf{En todo el texto}: Se define en \texttt{\textbackslash documentclass[]\{\}}
 
-    Un documento en \LaTeX{} se compone de dos principales segmentos: el preámbulo y el ambiente general del documento (denotado por \texttt{document}).\\
+            \item \textbf{En porciones del texto}:
+                Comandos, ordenados de menor a mayor tamaño:
+                \begin{enumerate}
+                    \item \texttt{\textbackslash tiny}
+                    \item \texttt{\textbackslash scriptsize}
+                    \item \texttt{\textbackslash footnotesize}
+                    \item \texttt{\textbackslash normalsize}
+                    \item \texttt{\textbackslash large}
+                    \item \texttt{\textbackslash Large}
+                    \item \texttt{\textbackslash LARGE}
+                    \item \texttt{\textbackslash huge}
+                    \item \texttt{\textbackslash Huge}
+                \end{enumerate}
+                
+        \end{enumerate}
+        
+        \begin{center}
+            \includegraphics[scale=0.25]{sizes}
+        \end{center}
     
-        $\left. \begin{minipage}{0.65\linewidth}
-            \begin{verbatim}
-\documentclass[]{article}
-
-\usepackage[margin=1.25in]{geometry}
-\usepackage{amsmath, amssymb}
-\usepackage{graphicx}
-            \end{verbatim}
-        \end{minipage} \right\rbrace$ Preámbulo
-        
-        $\left. \begin{minipage}{0.65\linewidth}
-            \begin{verbatim}
-\begin{document}
-    Aquí va el texto.
-
-    \[ f(x) = \int_{0}^{x} t^{2} dt\]
-
-    \includegraphics[scale=0.5]{image.png}
-\end{document}
-            \end{verbatim}
-        \end{minipage} \right\rbrace$ Ambiente "\texttt{document}"
-
-    \section{Preámbulo}
-        \subsection{\texttt{documentclass}}
-        El preámbulo debe iniciar con el comando \texttt{documentclass}, que especifica la estructura general del documento. Este comando se estructura de la siguiente forma:
-        
-        \begin{align*} \text{
-            \texttt{
-                \textbackslash documentclass
-                }
-            }
-        \underbrace{
-            \text{
-                \texttt{
-                    [letterpage,12pt]
-                    }
-                }
-        }_{\text{opcional}}
-        \underbrace{
-            \text{
-                \texttt{
-                    \{article\}
-                    }
-                }
-        }_{\text{tipo de documento}} \end{align*}
-        
-        donde
+    \subsection{Estilos de fuente}
+        En particular, tenemos tres herramientas usuales para dar estilo al texto presentado.
             \begin{enumerate}
-                \item \textbf{Tipo de documento}: 
-                    \begin{itemize}
-                        \item \texttt{article}: Estructura general para escribir articulos, ya sea publicaciones cientificas, documentación para programas y, en general, cualquier tipo de documento corto que no requiera una división compleja de partes y capítulos.
-                        \item \texttt{report}: Tipos de articulos largos, que contengan una cantidad mayor de capítulos, como libros pequeños y tesis.
-                        \item \texttt{book}: Usado para libros...
-                        \item \texttt{letter}: Para cartas.
-                        \item \texttt{beamer}: Utilizado para presentaciones en general. Requiere el paquete \texttt{beamer}.
-                    \end{itemize}
-                \item Opcional:
-                    \begin{itemize}
-                        \item Tamaño de papel:
-                        \item Tamaño de fuente:
-                    \end{itemize}
+                \item Negrita: \texttt{\textbackslash textbf} Este es un texto en \textbf{negrita}.
+                    
+                \item Cursiva: \texttt{\textbackslash textit} Este es un texto en \textit{cursiva}.
+                \item Subrayado: \texttt{\textbackslash underline} Este es un texto \underline{subrayado}.
+                \item Texto tipográfico: \texttt{\textbackslash texttt} Este es un texto \texttt{tipográfico}.
+                \item Texto Small Caps: \texttt{\textbackslash textsc} Este es un texto \textsc{En Formato Sc., que consiste que las mínusculas son mayúsculas pero de un tamaño menor}.
             \end{enumerate}
 
-        \subsection{\texttt{usepackage}}
-        Luego, suelen agregarse distintos paquetes. Los siguientes
-            \begin{itemize}
-                \item \texttt{geometry}:
-                \item \texttt{amsmath}:
-                \item \texttt{amssymb}:
-                \item \texttt{graphicx}:
-            \end{itemize}
-    \section{Ambiente \texttt{document}}
-
-        En el ambiente \texttt{document} es donde se presenta el contenido actual que se desea mostrar.
+    \subsection{Correcto uso de brackets}
+        \begin{verbatim}
+\textbf{\textit{\underline{Este es un texto en negritas, en cursiva y subrayado.}}}
+        \end{verbatim}
         
-    \section{Tamaños de fuente}
-
-        \subsection{En todo el texto}
-        
-            Para establecer un tamaño de fuente en todo el documento, se establece. Puede ser \texttt{10pt}, \texttt{11pt} y \texttt{12pt}.
-            
-        \subsection{En una porción de texto}
-        
-            Comandos:
-                \begin{enumerate}
-                    \item \texttt{\textbackslash tiny}:
-                    \item \texttt{\textbackslash scriptsize}:
-                    \item \texttt{\textbackslash footnotesize}:
-                    \item \texttt{\textbackslash normalsize}:
-                    \item \texttt{\textbackslash large}:
-                    \item \texttt{\textbackslash Large}:
-                    \item \texttt{\textbackslash LARGE}:
-                    \item \texttt{\textbackslash huge}:
-                    \item \texttt{\textbackslash Huge}:
-                \end{enumerate}
-
-        Alcance
-    \section{Familia de fuentes}
+        \begin{verbatim}
+                           Este es un texto en negritas, en cursiva y subrayado.
+                \underline{                                                     }
+        \textit{                                                                 }
+\textbf{                                                                          }
+        \end{verbatim}
 
     
-    \section{Estilos de fuente}
+    \subsection{Listas}
     
-    \section{Correcto uso de brackets}
-    
-    \section{Enfasís}
-    
-    
-    
-    \section{Alineamiento de texto}
-    
-    \section{Saltos de linea}
-    
-    \section{Indentación}
-    
-    \section{Importar imagenes}
-    
-    \section{Diseño y tamaño de la pagina}
-    
-        \subsection{Tipos de página}
-        \subsection{Fancyhdr}
-        \subsection{Números de página}
-        \subsection{Forzar nueva página}
+        \begin{enumerate}
+            \item Lista enumerada:
+                \begin{verbatim}
+\begin{enumerate}
+    \item Este es el primer item.
+    \item Este es el segundo item.
+\end{enumerate}
+                \end{verbatim}
+\begin{enumerate}
+    \item Este es el primer item.
+    \item Este es el segundo item.
+\end{enumerate}
+            \item Lista no enumerada:
+                \begin{verbatim}
+\begin{itemize}
+    \item Este es el primer item.
+    \item Este es el segundo item.
+\end{itemize}
+                \end{verbatim}
+\begin{itemize}
+    \item Este es el primer item.
+    \item Este es el segundo item.
+\end{itemize}
+        \end{enumerate}
         
-    \section{Definir nuevos comandos y funciones}
+    Se pueden personalizar los puntos de las enumeraciones. Por cada uno, se puede hacer
+            \begin{verbatim}
+\begin{enumerate}
+    \item Este es el primer item.
+    \item[A] Este es el segundo item.
+    \item[5] Este es el tercer item.
+\end{enumerate}
+            \end{verbatim}
+            \begin{enumerate}
+                \item Este es el primer item.
+                \item[A] Este es el segundo item.
+                \item[5] Este es el tercer item.
+            \end{enumerate}
+    El paquete \texttt{enumi} complementa las distintas opciones que se tienen para \texttt{enumerate}.
     
-    \section{Enumeración y listados}
-        \subsection{Customizar bullets}
+    \subsection{Alineamiento de texto}
+                \begin{verbatim}
+Este texto no está centrado.
+                \end{verbatim}
+Este texto no está alineado.
+                Texto centrado
+                    \begin{verbatim}
+\begin{center}
+Este texto está centrado.
+\end{center}
+                    \end{verbatim}
+\begin{center}
+Este texto está centrado.
+\end{center}
         
-    \section{Ambientes para definiciones, teoremas y demostraciones}
+
+                Texto a la izquierda
+                    \begin{verbatim}
+\begin{flushleft}
+Este texto está alineado a
+la izquierda.
+\end{flushleft}
+                    \end{verbatim}
+\begin{flushleft}
+Este texto está alineado a la izquierda.
+\end{flushleft}
+                Texto a la derecha
+                    \begin{verbatim}
+\begin{flushright}
+Este texto está alineado
+a la derecha.
+\end{flushright}
+                    \end{verbatim}
+\begin{flushright}
+Este texto está alineado a la derecha.
+\end{flushright}
+
+    \subsection{Indentación en texto}
     
-    \section{Definir nuevos ambientes}
+        Para separar párrafos en un documento, se inserta una linea vacía entre uno y otro. Por ejemplo:
+        \begin{verbatim}
+Este es el primer párrafo que usaremos como ejemplo para 
+observar como \LaTeX{} separa párrafos. Por si no se habia
+dicho antes, el comando \LaTeX{} no genera el logo de LaTeX
+en forma de texto.
+
+Este es otro texto que usaremos como ejemplo, que consiste
+en el segundo párrafo.
+        \end{verbatim}
+        \LaTeX{} automáticamente indenta automaticamente nuevos párrafos. 
+    
+        La indentación dentro del código de \LaTeX{} es distinta a la indentación que aparece al final del documento.
+        
+        Si deseamos especificamente no indentar un párrafo, se debe anteponer al párrafo el comando \texttt{\textbackslash noindent}.
+
+    \subsection{Saltos de linea}
+
+        Los saltos de linea se pueden realizar como
+            \begin{verbatim}
+Esta es la primera linea.\\
+Esta es la segunda linea.\\[\baselineskip]
+Esta es la tercera linea.\\[2\baselineskip]
+Esta es la cuarta linea.
+            \end{verbatim}
+Esta es la primera linea.\\
+Esta es la segunda linea.\\[\baselineskip]
+Esta es la tercera linea.\\[2\baselineskip]
+Esta es la cuarta linea.
+
+    \subsection{Forzar nueva página}
+    
+        Dos comandos:
+            \begin{enumerate}
+                \item \texttt{\textbackslash newpage}
+                \item \texttt{\textbackslash clearpage}
+            \end{enumerate}
+        Ambos comandos se utilizan para saltar una nueva página. Poseen unas diferencias, las cuales se verán más adelante.
     
 \end{document}

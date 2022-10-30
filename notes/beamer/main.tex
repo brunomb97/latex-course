@@ -1,4 +1,180 @@
 \documentclass[../notes.tex]{subfiles}
 \begin{document}
-    test
+    
+    \subsection{Estructura}
+    
+        Beamer es una clase de documento para realizar presentaciones.
+
+            \begin{verbatim}
+\documentclass{beamer}
+            \end{verbatim}
+
+        La estructura básica de un beamer corresponderán a slides, de forma que denotaremos \texttt{frame} a cada diapositiva de la presentación.
+        
+        \begin{verbatim}
+\begin{frame}{Titulo de la diapositiva}
+    Aqui va el texto de la diapositiva.
+\end{frame}
+        \end{verbatim}
+
+        En general, siguen las mismas reglas vistas anteriormente. Beamer entrega más herramientas para utilizar.
+
+    
+        Se pueden también crear título e índices para las presentaciones.
+        \begin{verbatim}
+\begin{frame}
+    \maketitle
+\end{frame}
+
+\begin{frame}
+    \tableofcontents
+\end{frame}
+        \end{verbatim}
+        
+%        \begin{block}{Nota}
+        	Existen más opciones para agregar al título que los vistos anteriormente. En este caso, también podemos agregar:
+%        \end{block}
+        \begin{verbatim}
+\subtitle{Aquí va un texto corto}
+\logo{\includegraphics{utfsm}}
+        \end{verbatim}
+        
+        También se puede crear un índice donde destaque la sección y sub-sección actual.
+        \begin{verbatim}
+\begin{frame}
+    \tableofcontents[currentsection]
+\end{frame}
+\begin{frame}
+    \tableofcontents[currentsection,currentsubsection]
+\end{frame}
+        \end{verbatim}
+
+    \subsection{Múltiples columnas en diapositivas}
+
+        Se puede utilizar múltiples columnas con el ambiente \texttt{columns}
+        \begin{verbatim}
+\begin{columns}
+    \column{0.4 \linewidth}
+        Este es el texto de la columna 1.
+            
+        Puede contener varios párrafos.
+    \column{0.6 \linewidth}
+        Este es el texto de la columna 2.
+            
+        Esta es una columna más ancha que la otra.
+\end{columns}
+        \end{verbatim}
+    Output:
+    
+        %\begin{columns}
+        %    \column{0.4 \linewidth}
+        %        Este es el texto de la columna 1.
+        %
+        %        Puede contener varios párrafos.
+        %    \column{0.6 \linewidth}
+        %        Este es el texto de la columna 2.
+        %
+        %        Esta es una columna más ancha que la otra.
+        %\end{columns}
+        
+        %\begin{block}{Nota}
+            Tiene sentido establecer el largo de la columna de forma que dependa del largo de la linea. En este caso, se estableció que la primera columna posea el 40\% del largo de la linea y la segunda columna el 60\%.\\[\baselineskip]
+            
+            No necesariamente debe cubrir toda la linea.
+        %\end{block}
+        
+        \begin{verbatim}
+    Este texto se encuentra arriba.
+        \vspace{1em}
+\begin{columns}
+    \column{0.4 \linewidth}
+        Este es el texto de la columna 1.
+            
+        Puede contener varios párrafos.
+    \column{0.4 \linewidth}
+        Este es el texto de la columna 2.
+            
+        Esta es una columna más ancha que la otra.
+\end{columns}
+        \vspace{1em}
+    Este texto se encuentra abajo.
+        \end{verbatim}
+        
+    Este texto se encuentra arriba de las columnas.
+    \vspace{1em}
+%\begin{columns}
+%    \column{0.4 \linewidth}
+        Este es el texto de la columna 1.
+            
+        Puede contener varios párrafos.
+%    \column{0.4 \linewidth}
+        Este es el texto de la columna 2.
+            
+        Esta es una columna más ancha que la otra.
+%\end{columns}
+    \vspace{1em}
+    Este texto se encuentra abajo de las columnas.
+
+    \subsection{Pausas}
+    
+    	Una diapositiva se puede separar en varias a medida que se agregan pausas: hacer aparecer una linea nueva en la slide cada vez que se avanza en la presentación.
+        \begin{verbatim}
+\begin{frame}
+    Este texto aparecerá en una primera instancia.
+    
+    \pause
+    
+    Este texto aparecerá en una segunda instancia.
+\end{frame}
+        \end{verbatim}
+
+    \subsection{Capas especificas}
+    
+    	Además de las pausas, se pueden especificar las slides en las que aparecerán, utilizando \texttt{<>}.
+        \begin{verbatim}
+\begin{frame}
+    \begin{itemize}
+        \item<2> Esta solo aparecerá en la slide 2
+        \item<1-4> Esta aparecerá desde la slides 1 
+        hasta la 4, incluyéndolas.
+        \item<3-> Esta aparecerá desde la slide 3 en adelante.
+        \item<1,3-4,6-> Esta aparecerá en la slide 1, 
+        desde la 3 hasta la 4 y desde la 6 en adelante.
+    \end{itemize}
+\end{frame}
+        \end{verbatim}
+    
+    \subsection{Bloques}
+        \begin{verbatim}
+\begin{frame}
+    \begin{block}{Titulo del bloque}
+        Este texto se encuentra dentro del bloque.
+    \end{block}
+    \begin{alertblock}{Bloque de alerta}
+        Este texto se encuentra dentro de un bloque de alerta.
+    \end{block}
+\end{frame}
+        \end{verbatim}
+        %\begin{block}{Titulo del bloque}
+        %    Este texto se encuentra dentro del bloque.
+        %\end{}
+        %\begin{alertblock}{Bloque de alerta}
+        %    Este texto se encuentra dentro de un bloque de alerta.
+        %\end{alertblock}
+    
+    \subsection{Temas}
+        Para seleccionar un tema, se deben agregar los comandos \texttt{usetheme} y \texttt{usecolortheme} en el preámbulo.
+        \begin{verbatim}
+        	\usetheme{Frankfurt}
+        \end{verbatim}
+        
+        %\begin{block}{Nota}
+        	Los temas de beamer poseen nombres de ciudades; los temas de color poseen nombres de animales.
+        %\end{block}
+
+        Existen muchos temas disponibles para beamer. Se puede encontrar un listado de estas en
+            \begin{itemize}
+            	\item \href{https://www.overleaf.com/learn/latex/Beamer%23Creating_a_table_of_contents#Reference_guide}{Overleaf: guía de referencia}
+            	\item \href{https://latex-beamer.com/tutorials/beamer-themes/}{Lista completa de Temas de Beamer}
+            \end{itemize}
 \end{document}
